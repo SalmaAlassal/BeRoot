@@ -9,10 +9,6 @@ This new approach and ideology surrounding software creation took hold and event
 
 ![](imgs/stallman.jpeg)
 
-## What is open source licences ?
-
-
-
 ## What is Open Source Initiative (OSI) ?
 
 The Open Source Initiative (OSI) was created to promote and protect open source software and communities.
