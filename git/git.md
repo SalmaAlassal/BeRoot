@@ -30,6 +30,20 @@ If Git is installed, it should show something like `git version X.Y.Z`
 
 ----------------------------------------------------------------
 
+# How to write Git commands?
+
+Git is a command-line tool that does not have GUI (Graphical User Interface) by default, so developers have to know how to interact with it.
+
+Git commands are usually written in the following format `git <command> [<args>]`
+
+### Examples 
+
+- `git init`
+- `git add file.txt`
+- `git add file.txt data.txt`
+
+----------------------------------------------------------------
+
 # Getting Help
 
 Git Help can be accessed from your Git Bash just by typing the command `git help` 
@@ -54,6 +68,8 @@ These commands as shown above are the most common commands used in Git.
   - E.g, `git help attributes`
   
 > Note: If you find yourself stuck in the list view, type `q` to exit the view.
+
+[Git online man Page](https://git-scm.com/docs/git "Git Documentation")
 
 ------------------------------------------------------------------
 
@@ -111,16 +127,19 @@ The `wait` flag to tell the terminal window to wait until we close the **new** v
 
 **If you have not selected any of the editors, Git will use your default system's editor.**
 
+If you want to use VIM : `git config --global core.editor "vim"`
+
 ### Setting default branch
 
 To configure the initial branch name to use in all of your new repositories: `git config --global init.defaultBranch <name>`
 
 E.g,`git config --global init.defaultBranch "main"` 
-   
-- To see local branch names : `git branch`
-- To see all remote branch names : `git branch -r`
-- To see all local and remote branches : `git branch -a`
- 
+
+### Setting the default behavior of `git push`
+
+If you want to use `git push` without a branch specified (e.g, `git push origin main`) issue :
+ `git config --global push.default current` → it pushes the current branch to a branch of the same name 
+
 ### Configuring git Credentials
 
 Git will sometimes need credentials from the user in order to perform operations; for example, it may need to ask for a username and password in order to access a remote repository over HTTP. 
@@ -165,7 +184,7 @@ If one developer uses Windows and another uses Mac or Linux, and they each save 
 
 - If you have **prettier** (code formatter) enabled and the `endOfLine` property is set to `lf`. On the Windows machine the developer will encounter linting issues from prettier, like those below :
 
-![prettier](imgs/prettier.png)
+    ![prettier](imgs/prettier.png)
 
 **For this reason, Git allows you to configure line endings in one of two ways:** 
   - by changing your local Git settings 
@@ -236,7 +255,7 @@ Now when anyone gets the code from the repo the default correct line ending will
 
 # `git init` Command
 
-Initializing a local repository : `git init Demo`  
+Initializing a local repository : `git init`  
 
 Git now knows that it should watch the folder you initiated it on. 
 
@@ -259,6 +278,7 @@ It is an important command without it, no git commit would ever do anything.
 - Stages multiple files & directories : `git add folder1 folder2 file.txt`
 - Stages with a pattern : `git add *.js` → Adds all files that ends with `.js`
 - Stages the current directory and all its content that are not listed in the **.gitignore** : `git add .`  
+- Stages all changes (new, modified, and deleted) files : `git add --all`
 
 ### `.` vs `*`
 
@@ -266,7 +286,7 @@ It is an important command without it, no git commit would ever do anything.
 
 - `git add .` has no special meaning in your shell, and thus Git adds the entire directory recursively, which is almost the same, but including files whose **names begin with a dot**.
 
-# Removing files/directories
+# Removing Files/Directories
  
 ### Files
 
@@ -281,9 +301,9 @@ It is an important command without it, no git commit would ever do anything.
 - Removes from working directory and staging area : `git rm -rf dir`
 
 
-# Renaming or moving files 
+# Renaming or Moving Files 
 
-- Rename a file on working directory only : ` mv oldName newName`
+- Rename a file on working directory only : ` mv oldName newName` → Not a git command
 
 - Rename a file on working directory and staging area : `git mv oldName newName`
 
@@ -292,27 +312,49 @@ It is an important command without it, no git commit would ever do anything.
 
 `git ls-files`
 
-# Viewing the status 
+# Viewing the Status 
 
 - Full status : `git status`  
 
-- Short status : - `git status -s`  
+- Short status : - `git status -s` 
+
+> * ?? - Untracked files
+> * A - Files added to stage
+> * M - Modified files
+> * D - Deleted files 
 
 # Committing the staged files 
 
-- Commits with a one-line message : `git commit -m “Message”` 
+Adding commits keep track of our progress and changes as we work. Git considers each commit change point or "save point".
+
+- Commits with a one-line message : `git commit -m "A brief message"` 
+  > The `commit` command performs a commit, and the `-m "message"` adds a message.
 
 - Opens the default editor to type a long message : `git commit` 
+
+> When we commit, we should always include a message.
 
 # Skipping the staging area 
 
  `git commit -am “Message” `
+
+> The `-am` allows us to add and message at the same time.
 
 - Say you have 10 files. You made changes to 5 of them and created 5 more. You have two choices.
 
   1. You can do `git add file1`, `git add file2` ...etc. This will take my changes and add them to a "staging" area. From there you can do a git commit, which will commit the changes to my local repository. If you wanted to push those changes to a remote repository, you would do `git push`
 
   2. You could use a shortcut. `git commit -a` Will automatically add any files that were changed to the "Staging" area as well as commit them.
+
+# Git Amend Command
+
+It is a convenient way to modify the most recent commit. It lets you **combine** staged changes with the previous commit instead of creating an entirely new commit. 
+
+Furthermore, it can also be used to simply edit the previous commit message without changing its snapshot.
+
+> Usually used to change the latest commit message.
+
+`git commit --amend -m "New message"`
 
 # Adding a remote repository
 
@@ -338,6 +380,8 @@ The git push command is used to upload local repository content to a remote repo
 
 **Example :** `git push origin master`
 
+> To force a Git push use : `git push -f`
+
 ### Push to a Specific Remote Repository and All Branches in it
 
 If you want to push all your changes to the remote repository and all branches in it, you can use: `git push --all <repo name>`
@@ -352,7 +396,9 @@ When you are on the dev branch, `git pull` will update your local dev to the sam
 
 # `git fetch` Command
 
-`git fetch` gathers any commits from the target branch that do not exist in the current branch and stores them in your local repository. However, it does not merge them with your current branch. This is particularly useful if you need to keep your repository up to date, but are working on something that might break if you update your files. To integrate the commits into your current branch, you must use `git merge` afterwards.
+`git fetch` gathers any commits from the target branch that do not exist in the current branch and stores them in your **local repository** (not the working directory). However, it does not merge them with your current branch. This is particularly useful if you need to keep your repository up to date, but are working on something that might break if you update your files. To integrate the commits into your current branch, you must use `git merge origin/<branch name>` afterwards.
+
+> `git fetch` simply updates your `.git` folder with the packed data. It does not update your working directory only the internal `.git` folder.
 
 # Pull vs Fetch
 
@@ -361,6 +407,7 @@ When you are on the dev branch, `git pull` will update your local dev to the sam
 
 - `git fetch` : Fetches changes on the remote server to your local repository. This command downloads all new branches from the remote repository and all commits from these branches. It will not merge these changes with your local branches. **(Update local repo)**
   > `git fetch` is the command that says "bring my local copy of the remote repository up to date."
+
 
 # `git clone` Command
 
@@ -374,4 +421,288 @@ Also, when you clone a repository, the command automatically adds that remote re
 
 -----------------------------------------
 
+# Comparing Commits
 
+`git diff` simply displays the changes between two commits
+
+- `git diff {commit_id1} {commit_id2}` : Shows the difference between two commits.
+- `git diff {commit_id1} {commit_id2} --stat` : Shows the difference between two commits with a summary of the changes.
+- `git diff {commit_id1} {commit_id2} --stat --color-words` : Shows the difference between two commits with a summary of the changes and highlights the changes in color.
+- `git diff {commit_id1} {commit_id2} --stat --color-words --word-diff-regex=.` : Shows the difference between two commits with a summary of the changes and highlights the changes in color. This command also shows the changes in the middle of a word.
+
+> Note: change the order of the commits affects the result as it displays the changes from commit1 and commit2.
+
+---------------------------------------------
+
+# Git Ignore
+
+When sharing your code with others, there are often files or parts of your project, you do not want to share.
+
+### Examples
+
+- log files
+- temporary files
+- hidden files
+- personal files
+- etc.
+
+Git can specify which files or parts of your project should be ignored by Git using a `.gitignore` file.
+
+Git will not track files and folders specified in `.gitignore`. However, the `.gitignore` file itself id **tracked** by Git.
+
+To create a local `.gitignore` file, create a text file and name it `.gitignore` **(remember to include the `.` at the beginning)**. Then edit this file as needed. Each new line should list an additional file or folder that you want Git to ignore.
+     
+  - `nano .gitignore`
+  - `git add  .gitignore`
+  - `git commit -m "Add gitignore"`
+
+The entries in this file can also follow a matching pattern.
+
+  - **\*** is used as a wildcard match
+  - **/** is used to ignore just directories, add a slash at the end of the pattern. Otherwise, it will ignore both files and directories.
+  - **#** is used to add comments to a `.gitignore` file
+
+
+This is an example of what the `.gitignore` file could look like:
+
+```bash
+# ignore ALL .log files
+*.log
+
+# Ignore all files with the temp.md
+temp.md
+
+# ignore ALL files in ANY directory named temp
+temp/
+
+# ignore ALL files in ANY directory named test
+test/
+```
+
+> Note: In this case, we use a single .gitignore which applies to the entire repository.
+> It is also possible to have additional .gitignore files in subdirectories. These only apply to files or folders within that directory.
+
+[A collection of useful .gitignore templates](https://github.com/github/gitignore)
+
+--------------------------------------------------------
+
+# `git clean` Command
+
+The clean command cleans your working directory by recursively removing files that are not under version control(untracked files).
+
+### Removes untracked files from your working directory.
+
+Git provides you an option to do a dry run to know what files will be removed by this command : `git clean -n` or `git clean --dry-run`
+
+Once you are cognizant of the files that will be removed, you can use `git clean -f` to force delete the files.
+
+If you want to remove untracked directories, you have to just add `-d` to the command. `git clean -f -d`
+
+---------------------------------------------
+
+# Viewing Repo Timeline
+
+- `git log` : Shows the commit history for the currently active branch.
+- `git log remotename/branchname` : Shows the commit history for the remote repo.
+- `git log --oneline` : Shows the commit history for the currently active branch in a compact format.
+- `git log --oneline --graph` : Shows the commit history for the currently active branch in a compact format with a graph.
+- `git log --oneline --graph --all` : Shows the commit history for all branches in a compact format with a graph.
+- `git log --oneline --graph --all --decorate` : Shows the commit history for all branches in a compact format with a graph and branch names.
+
+---------------------------------------------
+
+# All about Branches
+
+A **Branch** is a new/separate version of the main repository.
+
+Using **Branches** allows you:
+
+- Working on a new version without impacting the live version
+- Creating a new branch to fix small errors then merge it to the live version.
+- Divide the work between more than one person working on independent units.
+- You can switch between different **Branches** and work on them without impacting each other.
+
+### To check on Created Branches
+
+```Bash
+git branch
+    NewBranch
+  * master
+```
+The **\*** refers to that we are currently on that **Branch** (master).
+
+### To navigate between Branches
+
+```Bash
+git checkout NewBranch  #Old Command
+git switch NewBranch
+```
+
+### Commands
+
+- `git branch` : Lists all local branch names
+
+- `git branch -r ` : Lists all remote branch names
+
+- `git branch -a` : Lists all branches. This command shows both remote-tracking branches and local branches.
+
+- `git branch {branch_name}` : Creates a new branch.
+
+- `git checkout {branch_name}` : Switches to the specified branch and updates the working directory.
+
+- `git checkout -b {branch_name}` : Creates a new branch and switches to it.
+  > Using `-b` on `checkout` will create a new branch if it doesn't exit then it will navigate to the new created branch.
+
+- `git branch -d {branch_name}` : Deletes the specified branch.
+
+- `git push origin -d {remote_branch_name}` : Deletes the remote branch from the server. 
+
+- `git branch -m {old_branch_name} {new_branch_name}` : Renames the specified branch.
+
+- `git branch -M {old_branch_name} {new_branch_name}` : Renames the specified branch. This command is used to rename a branch even if the new branch name already exists. Ie, force rename
+
+---------------------------------------
+
+# Merge Branches
+
+First we need to navigate to our destination branch which will have the merged version, and it's usually the **master branch** then we **merge** the master branch with NewBranch.
+
+```Bash
+git checkout master
+git merge NewBranch
+```
+Since we finished the work on **NewBranch** we can delete it.
+
+```Bash
+git branch -d Newbranch
+```
+
+# Merge Conflicts
+
+Merge Conflict happens when there are two versions of the same file in the master and the other branch you want to merge into. 
+
+To fix the conflict we edit the file with the conflict **in the destination branch** then we run **git commit** that will conclude the **merge**.
+
+---------------------------------------
+
+# Undoing Changes
+
+There are two ways to undo changes: `git revert` and `git reset`.
+
+# `git revert` Command
+
+The `git revert` command can be considered an **'undo'** type command, however, it is not a traditional undo operation. Instead of removing the commit from the project history, it figures out how to **invert** the changes introduced by the commit and appends a new commit with the resulting **inverse content**. This prevents Git from losing history, which is important for the integrity of your revision history and for reliable collaboration.
+
+**Reverting should be used when you want to apply the inverse of a commit from your project history.** This can be useful, for example, if you’re tracking down a bug and find that it was introduced by a single commit. Instead of manually going in, fixing it, and committing a new snapshot, you can use git revert to automatically do all of this for you.
+
+### Revert the full commit
+
+To do this, you need to know your previous correct **commit’s SHA code**. The SHA code can be found, with the help of `git log` or `git log  --oneline` command.
+
+- `git revert {commit_id}`
+  - E.g, `git revert 3f08719` → It simply creates a new commit that is the opposite of that commit.
+
+![Revert](imgs/git-revert.png)
+
+**IMPORTANT NOTE**
+
+- `git revert` undoes a single commit—it **does not** "revert" back to the previous state of a project by removing all subsequent commits. In Git, this is actually called a **reset**, not a revert.
+
+### Revert using `HEAD~x`
+
+To **revert** to an earlier commit, use **HEAD~x** where **x** refers (**Number of steps**) : `git revert  HEAD~n`
+
+**Steps :**
+
+1. Find the previous commit.
+1. Calculate the number of steps.
+1. Make it the new commit.
+
+`git revert HAED~2`
+
+It will revert the 3rd previous commit.
+
+# `git reset` Command 
+
+`git reset` is the command we use when we want to move the repository back to a previous commit, discarding any changes made after that commit. Practically, you can think of it as a **"rollback"**—it points your local environment back to a previous commit. By "local environment," we mean your local repository, staging area, and working directory.
+
+- `git reset [<mode>] [<commit>]`
+  - E.g, `git reset --hard 2a5aad3` 
+
+> If you type `git reset <commit id>`, Git assumes that you’re performing a mixed reset, as it’s the default reset option. 
+
+### Mixed Reset `git reset --mixed `
+
+In a nutshell, the mixed option resets your changes safely by preserving your **uncommitted or staged changes and resetting them as unstaged changes.** It gives you a chance to undo your changes that were ready to commit but didn’t actually get committed. 
+
+### Possible to revert changes by using the following commands :
+
+- `git add`
+- `git commit`
+
+### Hard Reset `git reset --hard {commit_id}`
+
+The hard reset is a more direct and **dangerous** way to undo your changes as it deletes changes from everywhere. It not possible to revert changes.
+
+The hard reset moves the HEAD pointer to your last commit and also resets the Staging Area as well as the Working Directory to that commit. **This means all your changes in the working tree and Staging Area are completely lost.** 
+
+
+### Soft Reset `git reset --soft {commit_id}`
+
+The soft reset deletes changes only from the local repository. It leaves both your Staging Area and your Working Directory unchanged.
+
+#### Possible to revert changes by using the following commands :
+
+- `git commit`
+
+**Use Case - Combine a series of local commits**
+
+"Oops. Those three commits could be just one."
+
+So, undo the last 3 (or whatever) commits (without affecting the index nor working directory). Then commit all the changes as one.
+
+#### Example
+```
+$ git add readme 
+$ git commit -m "Start here."
+$ git add file1  
+$ git commit -m "One"
+$ git add file2  
+$ git commit -m "Two"
+$ git add file3  
+$ git commit -m "Three"
+$ git log --oneline --graph -4 --decorate
+
+  * da883dc (HEAD, master) Three
+  * 92d3eb7 Two
+  * c6e82d3 One
+  * e1e8042 Start here.
+
+$ git reset --soft e1e8042
+$ git log --oneline --graph -1 --decorate
+
+> * e1e8042 Start here.
+
+Now all your changes are preserved and ready to be committed as one.
+```
+
+### Important Notes
+
+`git reset` could be used to go backward or forward so store the **commit ID/hash** before applying the reset, so you can get back to any commit.
+
+> When you use `git log` after rest you will find the commits are no longer displayed in the log, but they still exist.
+
+
+# Resetting vs. Reverting
+
+- **Reverting** has two important advantages over resetting :
+  - First, it doesn’t change the project history, which makes it a **“safe”** operation for commits that have already been published to a shared repository.
+
+  - Second, git revert is able to target an individual commit at an arbitrary point in the history, whereas `git reset` can only work backward from the current commit. For example, if you wanted to undo an old commit with `git reset`, you would have to remove all the commits that occurred after the target commit, remove it, then re-commit all the subsequent commits. Needless to say, this is not an elegant undo solution.
+
+    ![Resetting vs. Reverting](imgs/Resetting-vs-reverting.png)
+
+**Git revert is a safer alternative to git reset regarding losing work.**
+
+----------------------------------------------------
+----------------------------------------------------

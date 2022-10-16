@@ -31,6 +31,8 @@ According to [initial commit of git](https://github.com/git/git/blob/e83c5163316
 
 Git is open-sourced — Feel free to explore its code [here](https://github.com/git/git).
 
+> It was created by Linus Torvalds in 2005, and has been maintained by Junio Hamano since then.
+
 ----------------------------------------------------
 
 # What's version control system (VCS)?
@@ -367,16 +369,16 @@ A local branch in Git means the branch, which is available only on your local ma
 
 ## The Default Branch
 
-By default, when you create a repository, the main branch is named the **master** branch. It is the base branch or the default branch in Git. As you start making commits, you're given a master branch that points to the last commit you made. Every time you commit, the master branch pointer moves forward automatically.
+By default, when you create a repository, the main branch is named the **master** branch. It is the base branch or the default branch in Git. As you start making commits, you're given a master branch that points to the last commit you made. Every time you commit, the master branch pointer(called `head`) moves forward automatically.
 
 Although **you can rename it**, many people stick with the default, so you’ll see lots of projects using master as their default branch.
 
 > On October 1, 2020, GitHub renamed its master branch to main.
 
-It's not necessary to name the main branch as a master/main branch. The main branch can be any branch you want.
+It's not necessary to name the main branch as a master or main branch. The main branch can be any branch you want.
 
 ### Git branch name examples
-- prepare-for-paper-x
+- Salma-Branch
 - issue-426
 - topic/feature-name
 
