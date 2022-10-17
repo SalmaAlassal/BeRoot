@@ -4,10 +4,17 @@ is software that is distributed with its source code, making it available for us
 
 ## The history of open source : 
 
-The idea of making source code freely available originated in 1983 from an ideological movement informally founded by Richard Stallman, a programmer at MIT. Stallman believed that software should be accessible to programmers so they could modify it as they wished, with the goal of understanding it, learning about it, and improving it.
-This new approach and ideology surrounding software creation took hold and eventually led to the formation of the Open Source Initiative (OSI) in 1998.
+The idea of making source code freely available originated in 1983 from an ideological movement informally founded by Richard Stallman, a programmer at MIT.
 
 ![](imgs/stallman.jpeg)
+
+Stallman believed that software should be accessible to programmers so they could modify it as they wished, with the goal of understanding it, learning about it, and improving it.
+
+So Satllman founded the GNU project and then Linus Trovalds joined the GNU GPL . 
+
+![](imgs/linus.webp)
+
+This new approach and ideology surrounding software creation took hold and eventually led to the formation of the Open Source Initiative (OSI) in 1998.
 
 ## What is Open Source Initiative (OSI) ?
 
