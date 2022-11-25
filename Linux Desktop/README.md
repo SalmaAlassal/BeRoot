@@ -57,6 +57,8 @@ The display manager is a bit of code that provides the GUI login screen for your
 
 ### Installation
 
+We will explain these commands later.
+
 #### Step 1
 
 - Update all the packages to their newest available versions.
@@ -99,6 +101,7 @@ Running Linux, changing or adding a different desktop environment is as easy as 
 ### Most Popular Linux Desktop Environments 
 
 - GNOME
+- GNOME Help command :`yelp`
 - Xfce 
 - KDE 
 - LXDE 
@@ -170,4 +173,3 @@ It's allowing the windows to be opened, closed, re-sized, and moved. It is also 
 # Resources 
 
 - https://en.wikipedia.org/wiki/Windowing_system
-- https://github.com/SalmaAlassal/mrNetwork

@@ -142,39 +142,48 @@ If, however, you’ve pretty much mastered the craft of computer and system admi
 
 ------------------------------------------------------------------
 
-## Why Linux?
+# What makes Linux great and why to use it?
 
 There are many reasons to use Linux, we will name a few, but there are always more reasons.
 
-1. **Privacy and Security**
+**- Linux is open source software.**
+    - Being open source does not just mean that you can see how the system works. You can also experiment with changes and share them freely for others to use. The open source model means that improvements are easier to make, enabling faster innovation.
 
-    The operating system respects the privacy of users to a unique extent, once the system starts running everything that happens is under your control unless a third party services is used.
+**- Privacy and Security**
 
-    That is mainly due to it being open source, so developers can’t hide spyware or force anything on the user, as they will be able to somehow avoid or change it.
+    - The operating system respects the privacy of users to a unique extent, once the system starts running everything that happens is under your control unless a third party services is used.
 
-2. **Required in Companies**
+    - That is mainly due to it being open source, so developers can’t hide spyware or force anything on the user, as they will be able to somehow avoid or change it.
 
-    It is required in many companies, including Microsoft, ITWorx, Mentor, Valeo, and a lot of other big popular companies.
-
-3. **Good Development Environment**
-
-    Linux is suitable for the developers, as it supports almost all of the most used programming languages such as C/C++, Java, Python, Ruby, and more. Further, it facilitates with a vast range of useful applications for development. 
-
-    Developers find that the Linux terminal is much better than the Windows command line, So, they prefer terminal over the Windows command line. The package manager on Linux system helps programmers to understand how things are done. Bash scripting is also a functional feature for the programmers. Also, the SSH support helps to manage the servers quickly.
-
-4. **Free**
+**- Free**
 
     GNU/Linux is both free as in freedom and free of charge, it has a lot of great alternatives for proprietary software that people use daily. Further, it provides various advantages over other operating systems, and we don't have to pay for it. 
 
-5. **Decentralized Development**
+**- Decentralized Development**
 
-    GNU/Linux isn’t owned by a single company, its development is community driven. People contribute to the Linux kernel and other assets of the GNU operating system.
+   - GNU/Linux isn’t owned by a single company, its development is community driven. People contribute to the Linux kernel and other assets of the GNU operating system.
 
-6. **Customisability**
+**- Linux provides easy access to a powerful and scriptable command-line interface (CLI).**
 
-    The operating system is very modular and customisable, which allows you to create your own customized system according to your needs.
+    - Linux was built around the basic design philosophy that users can perform all administration tasks from the CLI. It enables easier automation, deployment, and provisioning, and simplifies both local and remote system administration. Unlike other operating systems, these capabilities have been built in from the beginning, and the assumption has always been to enable these important capabilities.
 
-7. **Much more!**
+**- Required in Companies**
+
+    - It is required in many companies, including Microsoft, ITWorx, Mentor, Valeo, and a lot of other big popular companies.
+
+**- Good Development Environment**
+
+    - Linux is suitable for the developers, as it supports almost all of the most used programming languages such as C/C++, Java, Python, Ruby, and more. Further, it facilitates with a vast range of useful applications for development. 
+
+    - Developers find that the Linux terminal is much better than the Windows command line, So, they prefer terminal over the Windows command line. The package manager on Linux system helps programmers to understand how things are done. Bash scripting is also a functional feature for the programmers. Also, the SSH support helps to manage the servers quickly.
+
+    - Components of the system can be upgraded and updated as needed. A Linux system can be a general-purpose development workstation or an extremely stripped-down software appliance.
+
+**- Customisability**
+
+    - Linux is a modular operating system that allows you to easily replace or remove components, which allows you to create your own customized system according to your needs.
+
+**- Much more!**
 
 -------------------------------------------------------------------------------------------------------
 

@@ -16,6 +16,14 @@ Different Types of Shells in Linux : **sh**, **zsh**, **csh**, **ksh**, **fish**
 
 **The shell is the first user-friendly layer that a user can use to interact with the operating system.**
 
+#### Bash
+
+Bash **(GNU Bourne-Again Shell)** is the most popular and the default shell on most Linux distributions. Another popular shell is Zsh. It is powerful, and it is also the default Shell in macOS.
+
+Bash is an improved version of one of the most successful shells used on UNIX-like systems, the Bourne Shell (sh).
+
+Using bash to execute commands can be powerful. The bash shell provides a scripting language that can support automation of tasks. The shell has additional capabilities that can simplify or make possible operations that are hard to accomplish efficiently with graphical tools.
+
 ### Kernel
 
 The core of the OS, responsible for memory management, and communication with the hardware.
@@ -25,6 +33,8 @@ The core of the OS, responsible for memory management, and communication with th
 # Terminal vs Shell vs Prompt
 
 ### Terminal
+
+A terminal is a text-based interface used to enter commands into and print output from a computer system. 
 
 In the early days of computing, terminals where physical devices connected to a central computer in Universities and Research facilities. 
 
@@ -92,13 +102,25 @@ The syntax goes as follows:
 
 ![command-line-syntax](imgs/command_line_syntax.jpg)
 
-**The Command:** Intuitively, this is the command that you give to the system, i.e. delete, move, copy, list, etc..
+### The Command
 
-**The Option:** Modifies the action of the command.
+The command is the name of the program that you give to the system to run, i.e. delete, move, copy, list, …etc.
+
+### The Option
+
+The command may be followed by one or more options, which adjust the behavior of the command or what it will do. 
 
 **Example:** List “ALL” files, delete “recursively”, show the first “40” lines of a file, delete the file “by force”
 
-**The Arguments:** What you’re going to apply the command to. i.e. Delete (command) a certain file (argument). We can say in short that the options modify the command’s effect on the argument.
+Options normally start with one or two dashes (`-a` or `--all`, for example) to distinguish them from arguments. 
+
+### The Arguments
+
+Commands may also be followed by one or more arguments, which often indicate a target that the command should
+operate upon. i.e. Delete (command) a certain file (argument). 
+
+We can say in short that **the options modify the command’s effect on the argument.**
+
 
 #### Let’s take the ls command as an example:
 
@@ -180,6 +202,12 @@ No matter what you want to access, where it is, it will somehow connect to the r
 
 Here’s a demonstration of the Linux Filesystem Hierarchy:
 
+![Linux-Directory-Structure](imgs/Linux-Directory-Structure.png)
+
+### Directory Separator
+
+The `/` character is also used as a directory separator in file names. For example, if `etc` is a subdirectory of the `/` directory, you could refer to that directory as `/etc`. Likewise, if the `/etc` directory contained a file named `issue`, you could refer to that file as `/etc/issue`.
+
 -------------------------------------------------------------------------------------------
 
 # Linux Virtual Top-Level Directories 
@@ -200,7 +228,8 @@ The Linux file system structure originally evolved from the **Unix file structur
 |`/proc`  | Process directory, where **current hardware and system processes information** are stored.                    |
 |`/sys `  | System directory, where **system hardware information files** are stored (e.g, devices, drivers, and some kernel features). |
 | `/lib ` | Library directory, where **system and application library files** are stored.                                 |
-|`/run `  | Run directory, where **volatile runtime data** is held during system operation.                               |
+|`/run `  | Run directory, where **volatile runtime data** is held during system operation. This includes process ID files and lock files, among other things. The contents of this directory are
+recreated on reboot.|  
 |`/srv `  | Service directory, where **local services** (services provided by this system) store their files.             |
 |`/opt `  | Optional directory, often used to store **third-party software packages** and data files.                     |
 | `/bin ` | Binary directory, where many **essential user command binaries** are stored.                                  |
@@ -209,8 +238,7 @@ The Linux file system structure originally evolved from the **Unix file structur
 |`/tmp `  |Temporary directory, where **temporary work files** can be created and destroyed (these temporary files are generally deleted when the system is restarted). |
 |`/var `  |Variable directory, for **files that change frequently** which handled by services, such as logs, queues, caches, and spools. |
 | `/home` | Home directory, where Linux creates **normal user** directories (non-root users).                             |
-|`/root`  | The home directory for the **root user**.                                                                     |
-
+|`/root`  | The home directory for the **root user** (administrative superuser).                                          |
 
 **From the previous, we can see that: “Everything in Linux is a file”. Even devices and processes, everything is a file under the ‘/’ directory somehow.**
 
@@ -224,7 +252,7 @@ Now we know what a filesystem, directory, and file are. Let’s talk about how w
 
 -------------------------------------------------------------------------------------
 
-# Navigating through the Filesystem
+# Navigating through the File System
 
 You opened a terminal, now what?
 
@@ -261,13 +289,16 @@ There are 5 ways:
 
 Each directory has 2 hidden files (links) in it, ```.``` and ```..```.
 
-The ```.``` link refers to the directory itself.
+The `.` link refers to the **directory itself**.
 
-The ```..``` link refers to the directory before it (parent directory).
+The `..` link refers to the directory before it (**parent directory**).
 
 **Example:** If the working directory is `/home/osc/Pictures/`, then:
 
 ```‘.’ = /home/osc/Pictures/``` and ```‘..’ = /home/osc/``` which is the directory before it.
+
+> The `cd ..` command uses the `..` hidden directory to move up one level to the parent directory, without needing to know the exact parent name. 
+> The other hidden directory (`.`) specifies the current directory on commands in which the current location is either the source or destination argument, avoiding the need to type out the directory's absolute path name.
 
 To verify:
 
@@ -279,12 +310,13 @@ This can be a little confusing at first, so practice with yourself and maybe try
 # Relative and Absolute Paths
 
 Let’s simplify this by taking a guy called “Jack” as an example, Jack goes to FCIS ASU every day, this is the path he takes daily:
+
 ![Relative and absolute paths](imgs/relative_and_absolute_path.png)
 
 Jack’s route to college daily is **Home->Bus Stop->Abbassia->FCIS ASU.**
 
 If he met someone at Abbassia and asked him: “Where are you going?”, Jack’s response will be **“FCIS ASU”** only, because that’s the next step.
-If someone asked Jack “What’s your full route to college?”, Jack’s response would be **“ Home->Bus Stop->Abbassia->FCIS ASU”.**
+If someone asked Jack “What’s your full route to college?”, Jack’s response would be `Home->Bus Stop->Abbassia->FCIS ASU”`
 
 **Note that his route from Abbassia is shorter because it is relative to Abbassia.**
 
@@ -294,7 +326,10 @@ The same thing applies in Linux for directories and files.
 
 **Relative Path:** The path relative to the working directory.
 
+> The terms working directory or current working directory refer to their current location.
+
 **Example:**
+
 In the diagram, let the working directory be /home/User1
 
 ![Example](imgs/example_absolute_and_relative_path.png)
@@ -329,7 +364,7 @@ In the same diagram, let the working directory be `/home/User1` and the user you
 8. Error, there isn’t a directory called “User2” under the directory “User1”.
 9. The shell will change the working directory to `/home/User2` (This is the absolute path)
 
-----------------------------------------
+--------------------------------------------------------------
 
 # File Extensions in Linux
 
@@ -390,19 +425,39 @@ File pointing to another file (shortcut).
 
 ------------------------------------------------
 
+# Command-line File Management
 
-# Creating Directories
+To manage files, you need to be able to create, remove, copy, and move them. You also need to organize them logically into directories, which you also need to be able to create, remove, copy, and move.
+
+### Common file management commands
+
+| ACTIVITY COMMAND                    |SYNTAX                         |
+|-------------------------------------|-------------------------------|
+| Create a directory                  |`mkdir directory`              |
+| Copy a file                         |`cp file new-file`             |
+| Copy a directory and its contents   |`cp -r directory new-directory`|
+| Move or rename a file or directory  |`mv file new-file`             |
+| Remove a file                       |`rm file`                      |
+| Remove a directory containing files |`rm -r directory`              |
+| Remove an empty directory           |`rmdir directory`              |
+
+
+## Creating Directories
   
+The `mkdir` command creates one or more directories or subdirectories. It takes as arguments a list of paths to the directories you want to create.
+
+The `mkdir` command will fail with an error if the directory already exists, or if you are trying to create a subdirectory in a directory that does not exist. The `-p` (parent) option creates missing parent directories for the requested destination. Use the `mkdir -p` command with caution, because spelling mistakes can create unintended directories without generating error messages.
+
 | Command                                    | Description                               |
 |--------------------------------------------|-------------------------------------------|
 | `mkdir [name]`                             | Creates a directory.                      |
 | `mkdir -p Directory1/Directory2/Directory3`| To create subdirectories at the same time.|
 
-
 ![mkdir](imgs/make-dir.png)
+
 ![mkdir](imgs/make-dir-2-words.png)
 
-> Note: We use double quotes ``“ ”`` if the name of the directory has more than one word. This is to avoid making the shell interpret the 2 words as 2 separate arguments.
+> A space character is acceptable as part of a Linux file name. However, spaces are also used by the shell to separate options and arguments on the command line. If you enter a command that includes a file that has a space in its name, the shell can misinterpret the command and assume that you want to start a new file name or other argument at the space. It is possible to avoid this by putting file names in double quotes `""`. This is to avoid making the shell interpret the 2 words as 2 separate arguments.
 
 If you want to create more than one directory at a time you can do the following:
 
@@ -413,9 +468,9 @@ Let's check:
 ![ls](imgs/ls%20-l.png)
 
 
-# Creating Files 
+## Creating Files 
 
-You can use ``touch`` to create a file, like`` mkdir`` you can pass as many arguments to it, and it’ll create the files for you.
+You can use ``touch`` to create an empty file, like`` mkdir`` you can pass as many arguments to it, and it’ll create the files for you.
 
 If you want to create 2 files:``touch file1 file2``
 
@@ -423,10 +478,16 @@ If you want to create 2 files:``touch file1 file2``
 
 ![touch](imgs/touch.png)
 
+> The touch command normally updates a file's timestamp to the current date and time without otherwise modifying it. This is useful for creating empty files, which can be used for practice, because "touching" a file name that does not exist causes the file to be created.
 
 # Copying Files & Directories
 
-To copy files you can use:``cp``
+The `cp` command copies a file, creating a new file either in the current directory or in a specified directory. It can also copy multiple files to a directory.
+
+When copying multiple files with one command, the last argument must be a directory. Copied files retain their original names in the new directory. If a file with the same name exists in the target directory, the existing file is overwritten. By default, the `cp` does not copy directories; it ignores them.
+Use the copy command with the `-r` (recursive) option, to copy directories.
+
+**WARNING :** If the destination file already exists, the `cp` command **overwrites** the file.
 
 | Command | Description |
 |---------|-------------|
@@ -437,9 +498,9 @@ To copy files you can use:``cp``
 
 ![copy](imgs/copy.png)
 
-# Renaming and Moving Files 
+# Renaming & Moving Files 
 
-To rename a file use: ``mv``
+The `mv` command moves files from one location to another. It's also used to rename files.
 
 **Example:**
 
@@ -455,31 +516,81 @@ Moving `textfile` from `~/one` to `~/two`
 
 ![mv](imgs/move%20file.png)
 
-| Command | Description |
-|---------|-------------|
-|`mv [file] [destination directory]`       | To move file.|
-|`mv file_1 file_2 [destination directory]`| To move more than one file.|
+| Command                                  | Description                   |
+|------------------------------------------|-------------------------------|
+|`mv [file] [destination directory]`       | To move file.                 |
+|`mv file_1 file_2 [destination directory]`| To move more than one file.   |
 |`mv oldFile newFile`                      | To rename a file or directory.|
 
-# Deleting Files and Directories
+# Removing Files and Directories
 
-You can delete a file or a directory using the ```rm``` command.
+The `rm` command removes files. By default, rm will not remove directories that contain files, unless you add the `-r` or -`-recursive` option.
 
-|     Command            | Description |
-|------------------------|-------------|
-|`rm filename`           | Removes a file.|
-| `rm -i filename`       | Deletes a file but ask for confirm before.|
-| `rm -f filename`       | Deletes by force and don't prompt the user.|
-| `rm -d directory_name` | Deletes an empty directory.|
-| `rm -r directory_name` | Deletes a non-empty directory. |
-|`rmdir directory_name`  | Removes a directory|
+**IMPORTANT :** There is no command-line undelete feature, nor a "trash bin" from which you can restore files staged for deletion.
+
+|     Command            | Description                                |
+|------------------------|--------------------------------------------|
+|`rm filename`           | Removes a file.                            |
+|`rm -i filename`        | Deletes a file but ask for confirm before. |
+|`rm -f filename`        | Deletes by force and don't prompt the user.|
+|`rm -d directory_name`  | Deletes an empty directory.                |
+|`rm -r directory_name`  | Deletes a non-empty directory.             |
+|`rmdir directory_name`  | Removes an empty directory.                |
 
 
 ----------------------------------------
 ----------------------------------------
 
+# Useful Command-line Editing Shortcuts
 
-# Resources
+| Short cut         | Description                                                       |
+|-------------------|-------------------------------------------------------------------|
+| `Ctrl+a`          |Jump to the **beginning** of the command line.                     |
+| `Ctrl+e`          |Jump to the **end** of the command line.                           |
+| `Ctrl+u`          |Clear from the cursor **to the beginning** of the command line.    |
+| `Ctrl+k`          |Clear from the cursor **to the end** of the command line.          |
+| `Ctrl+LeftArrow`  |Jump to the beginning of the previous word on the command line.    |
+| `Ctrl+RightArrow` |Jump to the end of the next word on the command line.              |
+| `Ctrl+r`          |Search the history list of commands for a pattern.                 |
 
-- Linux Command Line and Shell Scripting Bible (Richard Blum, Christine Bresnahan)
-- https://medium.com/@smohajer85/file-extensions-in-linux-c619690941c4
+> You can cycle through reverse-i-search in BASH by repeatedly hitting `Ctrl + R`
+
+> Keyboard shortcuts aren't case-sensitive. For example, `Ctrl+a` is the same as `Ctrl+A`.
+
+----------------------------------------------------------------------------------------
+
+# TAB Completion 
+
+Tab completion allows a user to quickly complete commands or file names after they have typed enough at the prompt to make it unique. If the characters typed are not unique, pressing the Tab key twice displays all commands that begin with the characters already typed.
+
+![tab](imgs/TAB-Completion.png)
+
+----------------------------------------------------------------------------------------
+
+# Continuing a long command on another line
+
+Commands that support many options and arguments can quickly grow quite long and are automatically scrolled by the Bash shell. As soon as the cursor reaches the right margin of the window, the command continues on the next line. To make the readability of the command easier, you can break it up so that if fits on more than one line.
+
+To do this, add a backslash character (`\`) as the last character on the line. This tells the shell to ignore the newline character and treat the next line as if it were part of the current line. 
+
+The Bash shell will start the next line with the continuation prompt, usually a greater-than character (`>`), which indicates that the line is a continuation of the previous line. You can do this more than once.
+
+![Continuing a long command on another line](imgs/Continuing-a-long-command-on-another-line.png)
+
+----------------------------------------------------------------------------------------
+
+# Command history
+
+The history command displays a list of previously executed commands prefixed with a command number.
+
+The exclamation point character (`!`) is a metacharacter that is used to expand previous commands without having to retype them. 
+
+The `!number` command expands to the command matching the number specified. 
+
+The `!string` command expands to the most recent command that begins with the string specified.
+
+![Command History](imgs/Command-history.png)
+
+The arrow keys can be used to navigate through previous commands in the shell's history. `UpArrow` edits the previous command in the history list. `DownArrow` edits the next command in the history list. `LeftArrow` and` RightArrow` move the cursor left and right in the current command from the history list, so that you can edit it before running it.
+
+----------------------------------------------------------------------------------------
