@@ -50,6 +50,9 @@ Stallman specified four essential fundamental freedom for a software to be Free 
 
 > Most Free and Open Source Software are available free of cost.
 
+> Open source development today is overwhelmingly professional. Many developers are paid by their organizations to work with open source projects to construct and contribute the enhancements they and their customers need.
+
+
 ## FOSS vs Free Software 
 
 It may be true that all free software is zero-cost, but not all zero-cost software is free as in “freedom” — that is, the freedom to share and modify for any purpose. Think freeware, for example, the only thing you could do was download an executable and run it. You couldn’t get the source code, and even if you could, you didn’t have the right to modify or redistribute it.
@@ -94,13 +97,38 @@ The Open Source Initiative (OSI) was created to promote and protect open source 
 
 To be OSI certified, the software must be distributed under a license that guarantees the right to read, redistribute, modify, and use the software freely. 
 
-### Licenses that are "popular and widely-used or with strong communities"
+## Types of open source licenses
 
-- GNU General Public License (GPL)
-- Apache License 2.0 (Apache-2.0)
-- MIT license (MIT)
-- BSD 3-Clause "New" or "Revised" license
-- BSD 2-Clause "Simplified" or "FreeBSD" license
+There is more than one way to provide open source software. The terms of the software license control how the source can be combined with other code or reused, and hundreds of different open source licenses exist. 
+
+There are two broad classes of open source license that are particularly important:
+
+- **Copyleft licenses** that are designed to encourage keeping code open source.
+- **Permissive licenses** that are designed to maximize code reusability.
+
+### Copyleft Licenses
+
+When a person gets **copyright** of the software, his main intention is to prevent other people from distributing the software. Copyleft is exactly the opposite of copyright. 
+
+Copyleft, or "share-alike" licenses, require that anyone who distributes the source code, with or without changes, must also pass along the freedom for others to also copy, change, and distribute the code.
+
+The basic advantage of these licenses is that they help to keep existing code, and improvements to that code, open and add to the amount of open source code available. 
+
+Common copyleft licenses include the **GNU General Public License (GPL)** and the **Lesser GNU Public License (LGPL).**
+
+### Permissive licenses
+
+Permissive licenses are intended to maximize the reusability of source code. Users can use the source for any purpose as long as the **copyright and license** statements are preserved, including reusing that code under more restrictive or even **proprietary** licenses. This makes it very easy for this code to be reused, but at the risk of encouraging proprietary-only enhancements. 
+
+In other words, when a user modifies a software, he or she is not obligated to make their altered software open-source, however, the user usually needs to give credit to the original project.  
+
+Several commonly used permissive open source licenses include the **MIT/X11 license**, the **Simplified BSD license**, and the **Apache Software License 2.0**.
+
+### Copyleft v. permissive
+
+Both copyleft and permissive licenses allow users to copy, modify, and redistribute code freely. However, the main difference between the two lies in the degree of restrictiveness regarding their distribution. 
+
+When one modifies a copyleft software, one is obligated to keep their new altered code under open source, so it can be publically available. Whereas, when one modifies a permissive software, there is no such restriction except to give credit to the original work.
 
 > If you don’t apply an open source license, everybody who contributes to your project also becomes an exclusive copyright holder of their work. That means nobody can use, copy, distribute, or modify their contributions – and that “nobody” includes you.
 

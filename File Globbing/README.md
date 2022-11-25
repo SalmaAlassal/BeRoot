@@ -33,10 +33,10 @@
     - `[acs]` matches one character given in the bracket.
     - `[a-z]` matches one character from the range given in the bracket
 
-**Leading !**
+**Leading ! or ^**
 
 - Leading `!` changes the meaning of an include pattern to **exclude**.
-    - `[!abc]` matches one character that is not given in the bracket.
+    - `[!abc]` or `[^abc]` matches one character that is not given in the bracket.
     - `[!a-z]` matches one character that is not from the range given in the bracket.
 
 > Note, multiple leading `!` flips the meaning.
@@ -45,7 +45,18 @@
 
 - `{x,y,z}` Expand values between braces. 
     - `touch {1,2,3}.txt` creates the files `1.txt`, `2.txt`, `3.txt`.
+- `echo file{1..3}.txt` creates the files `file1.txt` `file2.txt` `file3.txt`
 
+- `echo file{a,b}{1,2}.txt` creates the files `filea1.txt` `filea2.txt` `fileb1.txt` `fileb2.txt`
+
+- `echo file{a{1,2},b,c}.txt` creates the files `filea1.txt` `filea2.txt` `fileb.txt` `filec.txt`
+
+**Tilde Expansion**
+
+- The tilde character (`~`), matches the current user's home directory. 
+
+- `echo ~` Expand to `/home/salma`
+    - `ls ~/glob` lists the files inside the `/home/salma/glob` 
 
 ### Examples
 
@@ -54,6 +65,8 @@
 ![Exclude Patterns](imgs/Exclude-Patterns.png)
 
 ![Braces Expansion](imgs/Braces-Expansion.png)
+
+![Tilde Expansion](imgs/tilde.png)
 
 ---------------------------------------------------------------
 
