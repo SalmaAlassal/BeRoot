@@ -2,41 +2,23 @@
 
 * Processes are the programs that are running on your machine. They are managed by the kernel and each process has an ID associated with it called the process ID (PID). This PID is assigned in the order that processes are created.
 
-![](imgs\1.jpg)
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/1.jpg)
 
 ***Any process can be run in two ways :***
 
 * **Foreground process :** By default, All the processes are run in the foreground. When a process is run in foreground, no other process can be run on the same terminal until the process is finished or killed. When issuing this type of process, the system receives input from the keyboard(stdin) and gives output to the screen(stdout). 
 
 * **Background process :** Adding ‘&’ to a foreground command makes it a background process. A background process runs on its own without input from the keyboard(stdin) and waits for input from the keyboard. While the process runs in the background, other processes can be run in the foreground.
---------------------------------------------------
-# **State of a Process :**
 
-![](imgs\2.png)
-
-
-![](imgs\3.png)
-
-```script
-$ ps aux
-```
-
-In the STAT column, you'll see lots of values. A linux process can be in a number of different states. The most common state codes you'll see are described below:
-
-* R: running or runnable, it is just waiting for the CPU to process it
-* S: Interruptible sleep, waiting for an event to complete, such as input from the terminal
-* D: Uninterruptible sleep, processes that cannot be killed or interrupted with a signal, usually to make them go away you have to reboot or fix the issue
-* Z: Zombie, we discussed in a previous lesson that zombies are terminated processes that are waiting to have their statuses collected
-![](imgs\4.png)
-
-* T: Stopped, a process that has been suspended/stopped
-
-![](imgs\5.webp)
 --------------------------------------------------
 # **There are five types of Process in Linux :**
-![](imgs\6.png)
+
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/6.png)
+
 
 1.  **Parent process :**  The process created by the user on the terminal. All processes have a parent process, If it was created directly by user then the parent process will be the kernel process.
+![parent](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/5.webp)
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/7.jpg)
 
 
 2. **Child process :**   The process created by another process (by its parent process). All child processes have a parent process.
@@ -44,27 +26,45 @@ Status of a process
 - The example is given above, the process having PID 28500(last row) is a child process of the process having PID 26544.
   
 
-![parent](imgs\7.jpg)
-
-![](imgs\8.png)
-
 3. **Orphan process :** Sometimes when the parent gets executed before its own child process then the child process becomes an orphan process. The orphan process have “Init” process (PID 0) as their PPID (parent process ID)
    
 
-
 4. **Zombie process :** The processes which are already dead but shows up in process status is called Zombie process. Zombie processes have Zero CPU consumption.
-![](imgs\9.gif)
-![](imgs\10.webp)
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/image289.webp)
+![zombie](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/4.png)
 
 5. **Daemon process :** These are system-related processes that run in the background. A Daemon process can be recognized if it has “?” in its TTY field (6th column)
+--------------------------------------------------
+# **State of a Process :**
+
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/2.png)
+
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/3.png)
+
+In the STAT column, you'll see lots of values. A linux process can be in a number of different states. The most common state codes you'll see are described below:
+
+* R: running or runnable, it is just waiting for the CPU to process it
+* S: Interruptible sleep, waiting for an event to complete, such as input from the terminal
+* D: Uninterruptible sleep, processes that cannot be killed or interrupted with a signal, usually to make them go away you have to reboot or fix the issue
+* Z: Zombie, we discussed in a previous lesson that zombies are terminated processes that are waiting to have their statuses collected
+
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/10.webp)
+
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/9.gif)
+
+* T: Stopped, a process that has been suspended/stopped
 
 ------------------------------------------
+
 # **ps command :**
-```script
+
+```
 $ ps
 ```
-![ps](imgs\ps.png)
-![ps](imgs\ps-axw.png)
+
+![ps](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/ps.png)
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/ps-axw.png)
+
 **This shows you a quick snapshot of the current processes :**
 
 * PID: Process ID
@@ -76,11 +76,12 @@ $ ps
 ----------------------------------------------
 * If you look at the man page for ps you'll see that there are lots of command options you can pass, they will vary depending on what options you want to use - BSD, GNU or Unix. In my opinion the BSD style is more popular to use, so we're gonna go with that. If you are curious the difference between the styles is the amount of dashes you use and the flags.
 ---------------------------
-```script
-$ ps aux
+
+```
+ps -axw
 ```
 
-![](imgs\ps-aux.png)
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/ps-aux.png)
 
 The **a** displays all processes running, including the ones being ran by other users. 
 
@@ -107,15 +108,12 @@ You'll notice you're seeing a lot more fields now, no need to memorize them all,
 -------------------------------------------
 
 # **top & htop commands**
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/top-vs-htop.webp)
 
-![](imgs\top-vs-htop.webp)
-
-
-```script
+```
 $ top
 ```
-
-![top](imgs\top.png)
+![top](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/top.png)
 
 * Top command displays a list of processes that are running in real-time along with their memory and CPU usage. Let’s understand the output a little better:
 
@@ -132,16 +130,17 @@ $ top
     * ‘S’ = sleeping
     * ‘T’ = traced or stopped
     * ‘Z’ = zombie
-
 * %CPU: Percentage of CPU used by the process.
 * %MEM; Percentage of RAM used by the process.
 * TIME+: Total CPU time consumed by the process.
 * Command: Command used to activate the process.
   
 ---------------------------------
-```script
+
+```
 $ htop  [-dChusv]
 ```
+
 
 * -d –delay : Used to show the delay between updates, in tenths of seconds.
 * -C –no-color –no-colour : Start htop in monochrome mode.
@@ -154,8 +153,6 @@ $ htop  [-dChusv]
 --------------------------------
 
 # **Signals**
-
-![](imgs\Signals.png)
 
 A **signal** is a notification to a process that something has happened.
 
@@ -179,6 +176,8 @@ When a signal is generated by some event, it's then delivered to a process, it's
 
 ***Common signals :***
 
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/killsignals.png)
+
 Each signal is defined by integers with symbolic names that are in the form of **SIGxxx** . Some of the most common signals are:
 
 * SIGHUP or HUP or 1 : Hangup
@@ -200,9 +199,9 @@ Numbers can vary with signals so they are usually referred by their names.
 
 *To send a sigkill, we can use the command*
 
-![](imgs\kill-process-pkill1.png)
-![](signalKill.webp)
-```script
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/kill-process-pkill1.png)
+
+```
 $ kill <PID>
 
 $ killall <process_name>
@@ -210,11 +209,12 @@ $ killall <process_name>
 $ kill -l
 ```
 
-![](imgs\kill-l.png)
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/kill-l.png)
 
-![](imgs\killsignals.png)
-
+---------------------------------------
 ## **Differences between SIGHUP, SIGINT, SIGTERM, SIGKILL, SIGSTOP?**
+
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/Signals.png)
 
 These signals all sound reasonably similar, but they do have their differences.
 
@@ -228,28 +228,28 @@ These signals all sound reasonably similar, but they do have their differences.
 # **Change priority of a process :**
 In Linux, you can prioritize between processes. The priority value for a process is called the ‘Niceness’ value. Niceness value can range from **-20** to **19** . ***0*** is the default value.
 
+
 The fourth column in the output of top command is the column for niceness value.
 
-To start a process and give it a nice value other than the default one, use :
+## **To start a process and give it a nice value other than the default one, use :**
 
-```script
+```
 $ nice -n [value] [process name]
 ```
-![](imgs\priority-with-nice.png)
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/priority-with-nice.png)
 
 To set the negative priority for a process 
-
-![](imgs\negative-priority-with-nice.png)
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/negative-priority-with-nice.png)
 
 To change nice value of a process that is already running use:
-
-```script
+```
 $ renice -n [value] -p 'PID'
 ```
-![](imgs\priority-of-running-porcess.png)
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/priority-of-running-porcess.png)
 
-![](imgs\lovelinux.jpg)
+------------------------------------------
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/lovelinux.jpg)
 
-![](imgs\memes.webp)
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/memes.webp)
 
-![](imgs\memes2.jpg)
+![](https://github.com/SalmaAlassal/BeRoot/blob/main/Processes/imgs/memes2.jpg)
