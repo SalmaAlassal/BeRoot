@@ -140,6 +140,15 @@ If your skill set extends into the above-average range, you could go with a dist
 
 If, however, you’ve pretty much mastered the craft of computer and system administration, use a distribution like Gentoo.
 
+
+**Note :**
+
+Linux users have a choice between two types of desktop distributions:
+
+- **Fixed (or Standard) release systems**, which offer security updates but usually delay application updates until the next version release; or
+- **Rolling-release systems**, with regular updates of all packages, so that, under normal circumstances, re-installation or version upgrades are never required.
+
+
 ------------------------------------------------------------------
 
 # What makes Linux great and why to use it?
@@ -147,17 +156,17 @@ If, however, you’ve pretty much mastered the craft of computer and system admi
 There are many reasons to use Linux, we will name a few, but there are always more reasons.
 
 **- Linux is open source software.**
-    - Being open source does not just mean that you can see how the system works. You can also experiment with changes and share them freely for others to use. The open source model means that improvements are easier to make, enabling faster innovation.
+  - Being open source does not just mean that you can see how the system works. You can also experiment with changes and share them freely for others to use. The open source model means that improvements are easier to make, enabling faster innovation.
 
 **- Privacy and Security**
 
-    - The operating system respects the privacy of users to a unique extent, once the system starts running everything that happens is under your control unless a third party services is used.
+  - The operating system respects the privacy of users to a unique extent, once the system starts running everything that happens is under your control unless a third party services is used.
 
-    - That is mainly due to it being open source, so developers can’t hide spyware or force anything on the user, as they will be able to somehow avoid or change it.
+  - That is mainly due to it being open source, so developers can’t hide spyware or force anything on the user, as they will be able to somehow avoid or change it.
 
 **- Free**
 
-    GNU/Linux is both free as in freedom and free of charge, it has a lot of great alternatives for proprietary software that people use daily. Further, it provides various advantages over other operating systems, and we don't have to pay for it. 
+  - GNU/Linux is both free as in freedom and free of charge, it has a lot of great alternatives for proprietary software that people use daily. Further, it provides various advantages over other operating systems, and we don't have to pay for it. 
 
 **- Decentralized Development**
 
@@ -165,23 +174,23 @@ There are many reasons to use Linux, we will name a few, but there are always mo
 
 **- Linux provides easy access to a powerful and scriptable command-line interface (CLI).**
 
-    - Linux was built around the basic design philosophy that users can perform all administration tasks from the CLI. It enables easier automation, deployment, and provisioning, and simplifies both local and remote system administration. Unlike other operating systems, these capabilities have been built in from the beginning, and the assumption has always been to enable these important capabilities.
+   - Linux was built around the basic design philosophy that users can perform all administration tasks from the CLI. It enables easier automation, deployment, and provisioning, and simplifies both local and remote system administration. Unlike other operating systems, these capabilities have been built in from the beginning, and the assumption has always been to enable these important capabilities.
 
 **- Required in Companies**
 
-    - It is required in many companies, including Microsoft, ITWorx, Mentor, Valeo, and a lot of other big popular companies.
+   - It is required in many companies, including Microsoft, ITWorx, Mentor, Valeo, and a lot of other big popular companies.
 
 **- Good Development Environment**
 
-    - Linux is suitable for the developers, as it supports almost all of the most used programming languages such as C/C++, Java, Python, Ruby, and more. Further, it facilitates with a vast range of useful applications for development. 
+   - Linux is suitable for the developers, as it supports almost all of the most used programming languages such as C/C++, Java, Python, Ruby, and more. Further, it facilitates with a vast range of useful applications for development. 
 
-    - Developers find that the Linux terminal is much better than the Windows command line, So, they prefer terminal over the Windows command line. The package manager on Linux system helps programmers to understand how things are done. Bash scripting is also a functional feature for the programmers. Also, the SSH support helps to manage the servers quickly.
+   - Developers find that the Linux terminal is much better than the Windows command line, So, they prefer terminal over the Windows command line. The package manager on Linux system helps programmers to understand how things are done. Bash scripting is also a functional feature for the programmers. Also, the SSH support helps to manage the servers quickly.
 
-    - Components of the system can be upgraded and updated as needed. A Linux system can be a general-purpose development workstation or an extremely stripped-down software appliance.
+   - Components of the system can be upgraded and updated as needed. A Linux system can be a general-purpose development workstation or an extremely stripped-down software appliance.
 
 **- Customisability**
 
-    - Linux is a modular operating system that allows you to easily replace or remove components, which allows you to create your own customized system according to your needs.
+   - Linux is a modular operating system that allows you to easily replace or remove components, which allows you to create your own customized system according to your needs.
 
 **- Much more!**
 
