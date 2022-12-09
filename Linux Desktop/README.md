@@ -18,7 +18,7 @@ And from there, the user can start opening windows and applications whose positi
 
 This process starts automatically on all Linux distributions that come prepacked with display managers; for example Ubuntu.
 
-But for **Arch Linux, Gentoo** — which is based on Arch Linux — and some other distributions also, you only get the Linux Kernel at installation. Which means they do not come pre-packed with all these applications. So you would have to understand this process so that you can install the appropriate variants of all these softwares in order to get a working desktop environment.
+But for **Arch Linux, Gentoo** and some other distributions also, you only get the Linux Kernel at installation. Which means they do not come pre-packed with all these applications. So you would have to understand this process so that you can install the appropriate variants of all these softwares in order to get a working desktop environment.
 
 ![The layers of the GUI](imgs/Schema_of_the_layers_of_the_graphical_user_interface.png)
 
@@ -48,7 +48,7 @@ The display manager is a bit of code that provides the GUI login screen for your
 
 ![GDM](imgs/gdm.png)
 
-### Most Popular Linux Desktop Environments 
+### Most Popular Linux Display Managers 
 
 - **GDM** (Gnome Display Manager, in distributions with GNOME DE installed)
 - **SDDM** (Simple Desktop Display Manager; in KDE based distributions)
