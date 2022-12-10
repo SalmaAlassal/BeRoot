@@ -27,8 +27,6 @@ Some software has source code that only the person, team, or organization that c
 - It is available for unlimited use, most of the time.
 - You can study and modify, but you can’t redistribute the software.
 
-![Source Available Software](imgs/Source-Available-Software.png)
-
 ----------------------------------------------------------------------------------
 
 # Free and Open Source Software (FOSS) 
