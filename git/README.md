@@ -677,3 +677,64 @@ git push <remote> <branch>
 The above command sends the local `<branch>` to the specified remote
 repository. Except, instead of a remote branch, `git push` creates a local
 branch.
+
+### Bare Repositories
+Every collaboration model involves at least one public repository that serves as a
+point-of-entry for multiple developers. Public repositories have the unique
+constraint of being bare—they must not have a working directory. This prevents
+developers from accidentally overwriting each others’ work with git push. You
+can create a bare repository by passing the --bare option to git init:
+```bash
+git init --bare <path>
+```
+Public repositories should only function as storage facilities—not development
+environments
+
+### Possible Workflows
+
+#### central repository model
+There is a single repository that all developers push to and pull from.
+
+<p align="center" >
+  <img src="git/../imgs/central.png"/>
+</p>
+This may be common on small teams with
+non-public projects where you don’t want to worry about a hierarchy
+– the strength of this model is that it forces everyone to stay up to
+date with each other and it doesn’t depend on a single role.
+
+#### dictator and lieutenant model
+This is a highly hierarchical model where one individual has com-
+mit rights to a blessed repository that everyone else fetches from.
+Changes are fetched from developers by lieutenants responsible for
+specific subsystems and merged and tested. Lieutenant branches
+are then fetched by the dictator and merged and pushed into the
+blessed repository, where the cycle starts over again.
+<p align="center" >
+  <img src="git/../imgs/dictator-and-lieutenant.png"/>
+</p>
+This is a model something like the Linux kernel uses, Linus being the
+benevolent dictator. This model is much better for large teams, and
+can be implemented with multiple and varied levels of lieutenants
+and sub-lieutenants in charge of various subsystems. At any stage
+in this process, patches or commits can be rejected – not merged in
+and sent up the chain.
+
+#### integration manager model
+This is where each developer has a public repository, but one is
+considered the ‘official’ repository – it is used to create the packages and binaries. A person or core team has commit rights to it, but
+many other developers have public forks of that repository. When
+they have changes, they issue a pull request to an integration man-
+ager, who adds them as a remote if they haven’t already – then
+merges, tests, accepts and pushes.
+
+<p align="center" >
+  <img src="git/../imgs/integration-manager.png"/>
+</p>
+
+This is largely how community-based git repositories like GitHub
+were built to work and how many smaller open source projects operate.
+
+**conclusion**:
+In the end, there is really no single right way to do it – being a decentralized system, you can have a model with all of these aspects to it, or any combination you can think of.\
+In the end, you and your team will have to think about what will work best for you.
