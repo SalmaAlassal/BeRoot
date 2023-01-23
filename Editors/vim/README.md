@@ -101,6 +101,14 @@ You should see an **intro screen**. This is the where you will be working on you
 
 ![VIM](imgs/intro-screen.png)
 
+### Opening a File
+
+To open a file on Vim from the terminal, run: `vim file.txt`
+
+You can also open multiple files at once: `vim file1.txt file2.txt file3.txt`
+
+Vim opens `file1.txt`, `file2.txt`, and `file3.txt` in separate buffers. You will learn about buffers later.
+
 -------------------------------------------------------------
 
 # VIM is a Modal Editor
@@ -172,6 +180,8 @@ Vim has three different visual modes. They are:
    - Line-wise visual mode (`V-LINE`)   : `V`
    - Block-wise visual mode (`V-BLOCK`) : `Ctrl-V `
 
+**If you find yourself using visual mode operation far more often than normal mode operations, be careful. This is an anti-pattern.** It takes more keystrokes to run a visual mode operation than its normal mode counterpart. For example, if you need to delete an inner word, why use four keystrokes, `viwd` (visually highlight an inner word then delete), if you can accomplish it with just three keystrokes (`diw`)? The latter is more direct and concise. Of course, there will be times when visual modes are appropriate, but in general, favor a more direct approach.
+
 # Command-line Mode (Cmdline or Last-Line Mode )
 
 It's used to give vim commands. When you are in this mode, the cursor goes to the bottom of the screen where you can type in different commands.
@@ -196,11 +206,22 @@ To leave the command-line mode, you can use `<Esc>`, `Ctrl-c`, or `Ctrl-[`.
 
 Select mode looks like Visual mode, but the commands accepted are quite different. It was created to be similar to Windows' selection mode **but with time has been less and less used**.
 
-Typing a printable character deletes the selection and starts Insert mode. 
+Select mode emulates regular editor's text highlighting behavior closer than visual mode. In regular editor, after you highlight a block of text, if you type letter "a", it will delete and replace the highlighted block of text with letter "a". 
 
-To enter the select mode from Normal mode, press :`gh` or `gH`
+### It has three modes
+
+- Character-wise Select Mode `gh`  
+- Line-wise Select Mode `gH`
+- Block-wise Select Mode `g Ctrl-h`
+
+
+To enter the select mode from Normal mode, press :`gh`, `gH` or `g Ctrl-h`
+
+To select a text, press `shift + arrow`
 
 Getting back to Normal Mode, press `<Esc>` or `Ctrl-C` or `Ctrl-[`.
+
+**You can't execute normal mode commands on highlighted text in select mode.**
 
 
 # Ex Mode
@@ -253,6 +274,8 @@ Entered when starting Select mode from Insert mode. E.g., by dragging the mouse 
 Replace mode is a special case of Insert mode.  You can do the same things as in Insert mode, but for each character you enter, one character of the existing text is deleted. 
 
 Before entering this mode, get into normal mode and put your cursor on top of the first character that you want to replace. Then press `R` to enter replace mode. Now whatever you type will replace the existing text. The cursor automatically moves to the next character just like in insert mode.
+
+**Tip:** If you have made a small typing error in replace mode, just press backspace without exiting the replace mode. This will revert the changes made to the preceding character in replace mode.
 
 # Virtual Replace Mode  
 

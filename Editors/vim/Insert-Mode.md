@@ -16,6 +16,8 @@ There are many ways to get into insert mode from the normal mode. Here are some 
 | `O ` |Starts a new line **above** the cursor and insert text. |
 | `s ` |Delete the character under the cursor and insert text. |
 | `S ` |Delete the current line and insert text. |
+| `cw` |Delete the current word and insert text. |
+| `cc` |Change line by clearing and then entering insert mode. |
 | `gi` |Insert text in same position where the last insert mode was stopped.|
 | `gI` |Insert text at the start of line (column 1). |
 
@@ -46,18 +48,30 @@ When you make a typing mistake, it can be cumbersome to type <Backspace> repeate
 | Key    | Function|
 |--------|---------|
 |`Ctrl-H`|Delete one character **before** the cursor.|
-|`Ctrl-w`|Delete one word **before** the cursor.|
-|`Ctrl-u`|Delete the entire line **before** the cursor..|
+|`Ctrl-W`|Delete one word **before** the cursor.|
+|`Ctrl-U`|Delete the entire line **before** the cursor..|
 
 **Important Note**
 
 You can't undo these deletions. However, what you've typed is still in the `.` register.
 
 
-## Executing Normal Mode Command
+## Executing Normal Mode Command (Insert Normal Mode)
 
 You can use `CTRL-O` to execute a **one** normal-mode command without leaving insert mode. 
 
 When you press `Ctrl-o`, you'll be in **insert-normal** sub-mode. If you look at mode indicator on bottom left, normally you will see `-- INSERT --`, but `Ctrl-o `will change it to `-- (insert) --`. 
+
+### Example 1 : Navigating while remaining in insert mode
+
+Let's say while typing, you wanted to add a word in the beginning of current line. Do `Ctrl-o 0` to jump to the beginning of the line, add the word, then jump back with to the end with `Ctrl-o $`.
+
+### Example 2: Centering screen
+
+If you're at the bottom of the screen. You can center your current position by doing `Ctrl-o zz`.
+
+### Example 3: Deleting faster
+
+If you wanted to delete a block of text from your current position to an anchor, say a comma, you can just do `Ctrl-o d t ,`
 
 ---------------------------------------------------------
