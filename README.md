@@ -120,7 +120,7 @@
 </tr>
 </table>
 
-### Session 3
+### Session 3 & 4
 
 <table>
 
@@ -134,7 +134,7 @@
 
 </table>
 
-### Session 4
+### Session 5
 
 <table>
 
@@ -217,6 +217,18 @@
 </tr>
 
 <tr>
+    <td>  <a href="Compression and Archiving"> File Compression and Archiving  </a> </td>
+    <td>
+        <b>
+            ❱ gzip  <br>
+            ❱ bzip2 <br>
+            ❱ zip   <br>
+            ❱ tar
+        </b>
+    </td>
+</tr>
+
+<tr>
     <td>  <a href="Redirecting Output"> Redirecting Output  </a> </td>
     <td>
         <b>
@@ -232,3 +244,119 @@
 </tr>
 
 </table>
+
+### Session 6
+
+<table>
+<tr>
+    <td>  <a href="Files Permissions & Ownership"> Files Permissions & Ownership   </a> </td>
+    <td>
+        <b>
+            ❱ Linux File Ownership   <br>
+            ❱ Linux File Permissions <br>
+            ❱ Changing Permissions   <br>
+            ❱ Changing Ownership and Group
+        </b>
+    </td>
+</tr>
+
+<tr>
+    <td>  <a href="Dealing with Users & Groups"> Dealing with Users & Groups </a> </td>
+    <td>
+        <b>
+        ❱ Superuser<br>
+        ❱ System User<br>
+        ❱ Regular User<br>
+        ❱ UID Ranges<br>
+        ❱ Group<br>
+        ❱ id Command<br>
+        ❱ /etc/passwd File<br>
+        ❱ /etc/shadow File<br>
+        ❱ /etc/group File<br>
+        ❱ Gaining Superuser Access<br>
+        ❱ sudo Command<br>
+        ❱ Switching Users su<br>
+        ❱ su vs. su -<br>
+        ❱ Sudo vs. Su<br>
+        ❱ Creating Users/Groups, Removing Users/Groups & Changing Passwords<br>
+        ❱ Why Not Just Use One Account?<br>
+        ❱ Creating Users "useradd"<br>
+        ❱ Setting/Changing Passwords "passwd"<br>
+        ❱ Creating Groups "groupadd"<br>
+        ❱ Add an Existing User Account to a Group "usermod"<br>
+        ❱ Removing Users "userdel"<br>
+        ❱ Removing Groups "groupdel" <br>      
+        </b>
+    </td>
+</tr>
+</table>
+
+# Session 7
+
+<table>
+<tr>
+    <td>  <a href="Shell Scripting">  Shell Scripting  </a> </td>
+    <td>
+        ❱ Definitions
+        <table>
+            <td> Shell         </td>
+            <td> Bash          </td>
+            <td> Shell Scripts </td>
+            <td> Bash Process  </td>
+        </table>
+        ❱ Shebang <br>
+        ❱ Script Execution <br>
+        ❱ Bash Parameters <br>
+        ❱ Bash Parameters <br>
+        ❱ Variables <br>
+        ❱ Scope of Variables <br>
+        ❱ Parameter Expansion <br>
+        ❱ The Difference between ' ' and " " <br>
+        ❱ Positional Parameters <br>
+        ❱ Special Parameters <br>
+        ❱ Arithmetic Expansion <br>
+        <table>
+            <td> expr Command  </td>
+            <td> let Command   </td>
+        </table>
+        ❱ Taking Input from Terminal <br>
+        <table>
+            <td> Command Line Arguments </td>
+            <td> read Command           </td>
+        </table>
+        ❱ Shell Variable Types <br>
+        <table>
+            <td> Local Variables                 </td>
+            <td> Global or Environment Variables </td>
+            <td> Shell Variables                 </td>
+        </table>
+        ❱ Comments # <br>
+        ❱ Command Substitution <br>
+        ❱ If Statements <br>
+        ❱ Conditions
+        <table>
+            <td> Comparing Numerical Variables </td>
+            <td> Comparing String Variables  </td>
+            <td> Boolean Conditions </td>
+            <td> File Conditions </td>
+        </table>
+        ❱ Case Statements <br>
+        ❱ Loops
+        <table>
+            <td> For Loops                   </td>
+            <td> While Loops                 </td>
+            <td> Until Loops                 </td>
+            <td> Break & Continue Statements </td>
+        </table>
+        ❱ Functions
+        <table>
+            <td> Passing Arguments to a Function </td>
+            <td> The Fork Bomb                   </td>
+        </table>
+    </td>
+</tr>
+</table>
+
+
+
+----------------------------------------------------------
