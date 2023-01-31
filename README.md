@@ -120,19 +120,42 @@
 </tr>
 </table>
 
-### Session 3 & 4
+### Session 3
 
 <table>
-
 <tr>
-    <td>  <a href="git"> Git Basics & GitHub  </a> </td>
+    <td>  <a href="git"> Git</a> </td>
     <td>
-        <b>
-        </b>
+        ❱ What's Git? <br>
+        ❱ How To Save Changes? <br>
+        ❱ How To Undo Changes? <br>
+        ❱ How To Work With Branches <br>
     </td>
 </tr>
-
 </table>
+
+### Session 4
+
+
+<table>
+<tr>
+    <td>  <a href="github"> GitHub</a> </td>
+    <td>
+        ❱ Remote Repository <br>
+        ❱ Issues <br>
+        &emsp;❱ Labels <br>
+        &emsp;❱ Milestone <br>
+        ❱ Contributors <br>
+        ❱ Fork <br>
+        ❱ Pull Requests <br>
+        ❱ Releases <br>
+        ❱ Wiki <br>
+        ❱ Pages <br>
+    </td>
+</tr>
+</table>
+
+
 
 ### Session 5
 
