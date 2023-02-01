@@ -101,8 +101,7 @@ Running Linux, changing or adding a different desktop environment is as easy as 
 ### Most Popular Linux Desktop Environments 
 
 - GNOME
-- GNOME Help command :`yelp`
-- Xfce 
+- XFCE 
 - KDE 
 - LXDE 
 - MATE
