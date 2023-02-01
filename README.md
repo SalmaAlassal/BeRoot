@@ -118,6 +118,34 @@
         </table>
     </td>
 </tr>
+</tr>
+    <td>  <a href="Environment & Startup Files"> Environment & Startup Files </a> </td>
+<td> <b>
+ ❱ Environment <br>
+        ❱ What Is Stored In The Environment? <br>
+        <table>
+            <tr>
+                <td> Environment Variables </td>
+                <td> Shell Variables </td>
+                <td> Aliases </td>
+                <td> Functions </td>
+            </tr>
+        </table>
+        ❱ How Is The Environment Established? <br>
+        ❱ Shell Types and Difference Between Them <br>
+        ❱ Startup files <br>
+        ❱ How to make Environment configurations permanent? <br>
+        ❱ How to organize Environment configurations? <br>
+        ❱ For Your Knowledge <br>
+        <table>
+            <tr>
+                <td> Explore Different Shells </td>
+                <td> How to customize bash prompt </td>
+            </tr>
+        </table>
+        </b>
+        </td>
+       </tr>
 </table>
 
 ### Session 3
