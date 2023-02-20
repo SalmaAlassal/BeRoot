@@ -152,9 +152,9 @@ You can compress multiple files and directories :
 
 - To extract the contents of a tar file : `tar -xvf filename.tar`
 
-- To extract the a specific file from a tar file : `tar -xvf filename.tar path/to/file`
+- To extract a specific file from a tar file : `tar -xvf filename.tar path/to/file`
 
-- To extract the a specific directory from a tar file : `tar -xvf filename.tar path/to/directory`
+- To extract a specific directory from a tar file : `tar -xvf filename.tar path/to/directory`
 
 > Remember, the tar command does not compress the files by default. 
 
@@ -165,9 +165,9 @@ You can compress multiple files and directories :
 
 - To extract a gzip tar archive : `tar xzvf filename.tar.gz`
 
-- To extract the a specific file from a gzip tar archive : `tar -xvf filename.tgz path/to/file`
+- To extract a specific file from a gzip tar archive : `tar -xvf filename.tgz path/to/file`
 
-- To extract the a specific directory from a gzip tar archive : `tar -xvf filename.tgz path/to/directory`
+- To extract a specific directory from a gzip tar archive : `tar -xvf filename.tgz path/to/directory`
 
 - To create a **tarred and bzipped** compressed file, use the `-j` option : `tar -cjvf filename.tbz files/directories` 
     - tar files compressed with bzip2 are conventionally given the extension `.tbz`.
