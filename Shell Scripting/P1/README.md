@@ -32,9 +32,9 @@ When we are at the terminal we have a **Bash process** running in order to give 
 
 As we say above anything you can run normally on the command line can be put into a script, and it will do exactly the same thing, so instead of using `echo` command in command line we will put it in a script and run it :
 
-![Hello World Script](imgs/helloWorld-Script.png)
+![Hello World Script](../imgs/helloWorld-Script.png)
 
-![Hello World Script](imgs/helloWorld-Script2.png)
+![Hello World Script](../imgs/helloWorld-Script2.png)
 
 Let's break everything down :
 
@@ -168,13 +168,13 @@ If you do not specify an interpreter line, the default is usually the `/bin/sh`.
 
 Assigning variables and using them on command line :
 
-![Variables on CLI](imgs/vars-cli.png)
+![Variables on CLI](../imgs/vars-cli.png)
 
 ####  Variables on Script
 
 Creating a script that does the same thing :
 
-![Variables on Script](imgs/nano-vars.png)
+![Variables on Script](../imgs/nano-vars.png)
 
 --------------------------------------------------
 
@@ -201,11 +201,11 @@ Creating a script that does the same thing :
 
 - The variable `$0` is the **name of the script itself**.
 
-![Positional Parameter](imgs/Positional-Parameter.png)
+![Positional Parameter](../imgs/Positional-Parameter.png)
 
 ### Example
 
-![Positional Parameters](imgs/Positional-Parameters.png)
+![Positional Parameters](../imgs/Positional-Parameters.png)
 
 ---------------------------------------------
 
@@ -217,7 +217,7 @@ The shell treats several parameters specially. These parameters may only be refe
 
 It's used to reference the **name of the shell** or **shell script** as we saw in positional parameters example.
 
-![$0](imgs/name-of-the-shell.png)
+![$0](../imgs/name-of-the-shell.png)
 
 ### `$?`
 
@@ -226,7 +226,7 @@ Every Linux or Unix command executed by the shell script or user has an **exit s
   - `0` exit status means the command was **successful** without any errors.
   - `A non-zero` (`1-255` values) exit status means command was a **failure**.
 
-![Exit Status](imgs/exit-status.png)
+![Exit Status](../imgs/exit-status.png)
 
 By using this you can check whether your bash script is completed successfully or not.
 
@@ -234,23 +234,23 @@ By using this you can check whether your bash script is completed successfully o
 
 Print the **last argument** of the previous command executed. At the **shell startup** (before writing any other command in your script), it gives the **absolute filename** of the **shell or bash script** which is being executed.
  
-![Dollar Underscore](imgs/dollar-underscore-terminal.png)
+![Dollar Underscore](../imgs/dollar-underscore-terminal.png)
 
 
-![Dollar Underscore](imgs/dollar-underscore-script.png)
+![Dollar Underscore](../imgs/dollar-underscore-script.png)
 
 ### `$#`
 
 Expands to the **number of positional parameters**, **excluding $0** that was sent to a script.
 
-![$#](imgs/dollar-hash.png)
+![$#](../imgs/dollar-hash.png)
 
 
 ### `$$`
 
 It's used to reference the **process ID of the current shell**. For shell scripts, this is the process ID under which they are executing.
 
-![$$](imgs/current-shell-ID.png)
+![$$](../imgs/current-shell-ID.png)
 
 
 ### `$*` and `$@`
@@ -261,9 +261,9 @@ Both the parameters specify all the command-line arguments at once If a script r
   - `"$@"` : When expansion occurs inside **double-quotes**, it takes the entire list and separates it into **separate arguments**.
   - `"$*"` : When expansion occurs inside **double-quotes**, it takes the entire list **as one argument** with spaces between.
 
-![Examples](imgs/star-and-@-script.png)
+![Examples](../imgs/star-and-@-script.png)
 
-![Examples](imgs/star-and-@-terminal.png)
+![Examples](../imgs/star-and-@-terminal.png)
 
 
 ## Summary
@@ -293,19 +293,19 @@ You can do 6 basic arithmetic operators in Bash:
 
 We can do Arithmetic Expansion by just enclose any mathematical expression inside double parentheses `$((  ))`. For example: `a=$((5 - 3 + $b))` Which means: variable `a` is equal to the value of the expression `5 - 3 + $b`
 
-![Examples](imgs/Arithmetic-Expansion.png)
+![Examples](../imgs/Arithmetic-Expansion.png)
 
 ### `expr` Command
 
 Evaluates a given expression and displays its corresponding output. It treats numbers containing a decimal point as strings.
 
-![Examples](imgs/expr.png)
+![Examples](../imgs/expr.png)
 
 ### `let` Command
 
 Evaluates arithmetic expressions.
 
-![Examples](imgs/let.png)
+![Examples](../imgs/let.png)
 
 
 > `expr` and `let` commands work perfectly with integer numbers. `bc` command with a proper syntax allows for more than simple integer calculations.
@@ -323,9 +323,9 @@ We discussed it above.
 
 We can interactively set variable names using the `read` command. Read command automatically places **quotes** around its input, so that spaces are treated correctly
 
-![Example](imgs/read-script.png)
+![Example](../imgs/read-script.png)
 
-![Example](imgs/read-terminal.png)
+![Example](../imgs/read-terminal.png)
 
 > You can use `read` with the `-p` flag to prompt the user with a question and take input at the same time. For example, ` read -p "Enter your name" name`
 
@@ -350,7 +350,7 @@ It is used to define the environment variables.
 
 ### Local vs Global Variables
 
-![Example](imgs/Local-vs-Global-Variables.png)
+![Example](../imgs/Local-vs-Global-Variables.png)
 
 ### Shell Variables 
 
@@ -371,7 +371,7 @@ A shell variable is a special variable that is set by the shell and is required 
 | `$RANDOM`      | Returns a different random number each time is it referred to|
 | `$LINENO`      | Returns the current line number in the Bash script           |
 
-![Examples](imgs/Shell-Variables.png)
+![Examples](../imgs/Shell-Variables.png)
 
 -----------------------------------------------------------------
 
@@ -381,7 +381,7 @@ A shell variable is a special variable that is set by the shell and is required 
 
 - The only exception is when the very first line of the file starts with `#!`. 
 
-![Comments](imgs/comments.png)
+![Comments](../imgs/comments.png)
 
 ----------------------------------------------------------------
 
@@ -391,8 +391,8 @@ A shell variable is a special variable that is set by the shell and is required 
 
 > Note that we use the back quote, not the single quote character.
 
-![Example](imgs/Command-Sub-script.png)
+![Example](../imgs/Command-Sub-script.png)
 
-![Example](imgs/Command-Sub-terminal.png)
+![Example](../imgs/Command-Sub-terminal.png)
 
 ---------------------------------------------

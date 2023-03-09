@@ -4,7 +4,7 @@
 
 If conditions are used to control a program's flow, as in they control what a program does and when.
 
-![Conditionals](imgs/Conditionals.png)
+![Conditionals](../imgs/Conditionals.png)
 
 ### Writing Conditionals in BASH
 
@@ -106,9 +106,9 @@ It is very important to understand that all the conditional expressions should b
 
 ### Example
 
-![Example](imgs/checkExistance-script.png)
+![Example](../imgs/checkExistance-script.png)
 
-![Example](imgs/checkExistance-terminal.png)
+![Example](../imgs/checkExistance-terminal.png)
 
 ------------------------------------------------
 
@@ -155,7 +155,7 @@ Loops are used to repeat a process/commands a certain no. of times.
 
 There are 3 types of loops in Bash (`for`, `while`, and `until`).
 
-![Loops](imgs/Loops.png)
+![Loops](../imgs/Loops.png)
 
 
 ## For Loops
@@ -186,7 +186,7 @@ done
 
 You can write a for loop in you terminal in one line:
 
-![For Loop](imgs/for-loop-terminal.png)
+![For Loop](../imgs/for-loop-terminal.png)
 
 ## While Loops
 
@@ -306,8 +306,8 @@ NAME #Function call
 
 This is a function that prints "Hello!" 3 times.
 
-![Example](imgs/fun-script.png)
-![Example](imgs/fun-terminal.png)
+![Example](../imgs/fun-script.png)
+![Example](../imgs/fun-terminal.png)
 
 
 ## Passing Arguments to a Function
@@ -318,13 +318,13 @@ To use the arguments as variables, you can access their values by using `$n` whe
 
 This is a function that adds 2 numbers.
 
-![Example](imgs/addFun-script.png)
-![Example](imgs/add-fun-terminal.png)
+![Example](../imgs/addFun-script.png)
+![Example](../imgs/add-fun-terminal.png)
 
 # The Fork Bomb 
 ## :(){:|:&};:
 
-![Meme](imgs/fork-bomb.png)
+![Meme](../imgs/fork-bomb.png)
 
 Fork Bomb is a program that harms a system by making it **run out of memory**. It forks processes infinitely to fill memory. The fork bomb is a form of **denial-of-service (DoS)** attack against a **Linux based system**. Once a successful fork bomb has been activated in a system it may not be possible to resume normal operation without rebooting the system as the only solution to a fork bomb is to destroy all instances of it.
 
@@ -340,7 +340,7 @@ To shield your system from Fork bomb ensure that you are limiting the number of 
 :          # Function call
 ```
 
-![The Fork Bomb](imgs/ForkBomb.png)
+![The Fork Bomb](../imgs/ForkBomb.png)
 
 -------------------------------------
 
