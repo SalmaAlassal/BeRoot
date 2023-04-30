@@ -9,9 +9,7 @@
 <tr>
     <td>  <a href="FOSS"> FOSS </a> </td>
     <td>
-         <b>
 		    ❱ Closed Source Software 
-         </b>
          <table>
                 <tr>
                     <td>  Paid Proprietary Software   </td>
@@ -19,37 +17,30 @@
                     <td> Source Available Software    </td>    
                 </tr>
          </table>
-         <b>
          ❱ Free and Open Source Software (FOSS)
-         </b>
         <table>
                 <tr>
                     <td> The FOSS Definition </td>
                     <td> FOSS vs Free Software </td>
                 </tr>
          </table>
-        <b>
           ❱ How do FOSS projects make money?<br>
           ❱ Open Source History <br>
           ❱ Types of open source licenses
-         </b>
          <table>
                 <tr>
                     <td> Copyleft Licenses </td>
                     <td> Permissive licenses </td>
                 </tr>
           </table>
-          <b>
           ❱ Importance of Open Source<br>
           ❱ OSS Examples 
-          </b>
     </td>
 </tr>
 
 <tr>
     <td>  <a href="Introduction to Linux"> Introduction to Linux </a> </td>
     <td>
-         <b>
 		    ❱ Introduction to Operating Systems <br>
             ❱ GNU/Linux <br>
             ❱ Linux Distribution Families <br>
@@ -57,20 +48,17 @@
             ❱ Installing software on Linux <br>
             ❱ Get yourself a Linux Machine <br>
             ❱ Dual Boot VS Live Boot VS Virtual Machine
-         </b>
     </td>
 </tr>
 
 <tr>
       <td>  <a href="Linux Desktop"> Linux Desktop </a> </td>
 	  <td>
-         <b>
 		    ❱ Linux Desktop <br>
             ❱ Display Server <br>
             ❱ Display Manager <br>
             ❱ Desktop Environment <br>
             ❱ Window Managers <br>
-         </b>
       </td>
 </tr>
 
@@ -83,7 +71,6 @@
 <tr>
     <td>  <a href="CLI & Linux File System"> CLI & Linux File System </a> </td>
     <td>
-        <b>
         ❱ The Shell <br>
         ❱ Terminal vs Shell vs Prompt <br>
         ❱ The Command Line Syntax <br>
@@ -108,7 +95,6 @@
         ❱ Command history <br>
         - - - - - - - - - - - - - - - - - - - - - - - - - <br>
         ❱ Terminal Types
-        </b>
         <table>
             <tr>
                 <td> Virtual Console </td>
@@ -120,7 +106,7 @@
 </tr>
 </tr>
     <td>  <a href="Environment & Startup Files"> Environment & Startup Files </a> </td>
-<td> <b>
+<td> 
  ❱ Environment <br>
         ❱ What Is Stored In The Environment? <br>
         <table>
@@ -143,7 +129,6 @@
                 <td> How to customize bash prompt </td>
             </tr>
         </table>
-        </b>
         </td>
        </tr>
 </table>
@@ -192,9 +177,7 @@
 <tr>
     <td>  <a href="Simple Commands"> Simple Commands  </a> </td>
     <td>
-        <b>
         ❱ GETTING HELP
-        </b>
         <table>
             <tr>
                 <td> Man Pages</td>
@@ -206,10 +189,8 @@
                 <td> What a command does                </td>
             </tr>
         </table>
-        <b>
         ❱ Basic Command Syntax <br>
         ❱ Bash Logical Operators
-        </b>
         <table>
             <tr>
                 <td> Logical AND</td>
@@ -222,67 +203,56 @@
 <tr>
     <td>  <a href="Viewing Files"> Viewing Files </a> </td>
     <td>
-        <b>
             ❱ cat Command <br>
             ❱ less Command <br>
             ❱ head & tail Commands <br>
             ❱ file Command
-        </b>
     </td>
 </tr>
 
 <tr>
     <td>  <a href="Editors/nano"> Nano </a> </td>
     <td>
-        <b>
             ❱ Opening and Creating Files <br>
             ❱ Saving and Exiting <br>
             ❱ Editing Files <br>
             ❱ Customizing Nano (nanorc) <br>
             ❱ Set Nano as the Default Text Editor
-        </b>
     </td>
 </tr>
 
 <tr>
     <td>  <a href="Creating Links"> Creating Links Between Files  </a> </td>
     <td>
-        <b>
             ❱ Inode <br>
             ❱ Inode Table <br>
             ❱ What are Links? <br>
             ❱ Creating Hard Links <br>
             ❱ Deleting Links
-        </b>
     </td>
 </tr>
 
 <tr>
     <td>  <a href="Finding Files"> Finding Files  </a> </td>
     <td>
-        <b>
             ❱ Find Command <Br>
             ❱ Locate Command
-        </b>
     </td>
 </tr>
 
 <tr>
     <td>  <a href="Compression and Archiving"> File Compression and Archiving  </a> </td>
     <td>
-        <b>
             ❱ gzip  <br>
             ❱ bzip2 <br>
             ❱ zip   <br>
             ❱ tar
-        </b>
     </td>
 </tr>
 
 <tr>
     <td>  <a href="Redirecting Output"> Redirecting Output  </a> </td>
     <td>
-        <b>
             ❱ Unix Philosophy <Br>
             ❱ Standard Input, Standard Output & Standard Error <Br>
             ❱ I/O Redirection Examples <Br>
@@ -290,7 +260,6 @@
             ❱ Pipeline Examples <Br>
             ❱ Pipelines, Redirection, and the tee Command <Br>
             ❱ Pipelines, and the wc Command
-        </b>
     </td>
 </tr>
 
@@ -302,19 +271,16 @@
 <tr>
     <td>  <a href="Files Permissions & Ownership"> Files Permissions & Ownership   </a> </td>
     <td>
-        <b>
             ❱ Linux File Ownership   <br>
             ❱ Linux File Permissions <br>
             ❱ Changing Permissions   <br>
             ❱ Changing Ownership and Group
-        </b>
     </td>
 </tr>
 
 <tr>
     <td>  <a href="Dealing with Users & Groups"> Dealing with Users & Groups </a> </td>
     <td>
-        <b>
         ❱ Superuser<br>
         ❱ System User<br>
         ❱ Regular User<br>
@@ -337,7 +303,6 @@
         ❱ Add an Existing User Account to a Group "usermod"<br>
         ❱ Removing Users "userdel"<br>
         ❱ Removing Groups "groupdel" <br>      
-        </b>
     </td>
 </tr>
 </table>
@@ -408,6 +373,127 @@
 </tr>
 </table>
 
+# Session 8
+
+<table>
+<tr>
+    <td>  <a href="Boot Process"> Boot Process </a> </td>
+    <td>
+        ❱ The Boot Process <br>
+        ❱ BIOS Stage <br>
+        ❱ Boot loader Stage <br>
+        ❱ Kernel Stage
+        <table>
+            <td> Kernel Initialization </td>
+            <td> The Startup Process </td>
+            <td> systemd </td>
+        </table>
+    </td>
+</tr>
+</table>
+
+# Session 9 & 10
+
+<table>
+<tr>
+    <td>  <a href="Networking"> Networking </a> </td>
+    <td>
+            ❱  Introduction to computer networks <br>
+            ❱  Network Tools
+                <table>
+                    <td> ping </td>
+                    <td> traceroute </td>
+                    <td> ifconfig </td>
+                    <td> ip </td>
+                    <td> nmap </td>
+                    <td> dig </td> 
+                    <td> wget & curl </td> 
+                    <td> ssh </td>
+                </table>
+    </td>
+</tr>
+</table>
 
 
-----------------------------------------------------------
+# Session 11
+
+<table>
+<tr>
+    <td>  <a href="Processes"> Processes </a> </td>
+    <td>
+        ❱ Processes <br>
+        ❱ Foreground and Background Processes <br>
+        ❱ Process Relationships <br>
+        <table>
+            <td> Parent Process </td>
+            <td> Child Process  </td>
+            <td> Orphan Process </td>
+            <td> Zombie Process </td>
+        </table>
+        ❱ ps Command <br>
+        ❱ Process States
+        <table>
+            <td> Running </td>
+            <td> Waiting </td>
+            <td> Stopped </td>
+            <td> Zombie  </td>
+        </table>
+        ❱ Process Codes <br>
+        ❱ top Command <br>
+        ❱ htop Command <br>
+        ❱ Signals <br>
+        ❱ kill & killall Commands <br>
+        ❱ Change priority of a process
+    </td>
+</tr>
+</table>
+
+<table>
+<tr>
+    <td>  <a href="Package Managers"> Package Managers   </a> </td>
+    <td>
+        ❱ Package Managers <br>
+        ❱ What is a Package <br>
+        ❱ Contents of Packages <br>
+        ❱ Package Dependencies <br>
+        ❱ Package Repositories <br>
+        ❱ How does the package manager work <br>
+        ❱ Functions of a Package manager <br>
+        ❱ Different kinds of package managers <br>
+        ❱ Architecture of Package managers <br>
+        ❱ Compile Source Code
+    </td>
+</tr>
+</table>
+
+# Session 12
+
+<table>
+<tr>
+    <td>  <a href="Text Processing"> Text Processing  </a> </td>
+    <td>
+            ❱ Sort  <br>
+            ❱ Cut   <br>
+            ❱ Uniq  <br>
+            ❱ tr    <br>
+            ❱ paste <br>
+            ❱ Regex <br>
+            ❱ Grep  <br>
+            ❱ Sed   <br>
+            ❱ Awk
+    </td>
+</tr>
+
+<tr>
+    <td>  <a href="File Globbing"> File Globbing  </a> </td>
+    <td>
+            ❱ Glob Patterns                               <br>
+            ❱ Basic Patterns                              <br>
+            ❱ Extended Globbing (extglob)                 <br>
+            ❱ Globstar                                    <br>
+            ❱ Glob – Filename Pattern Matching vs. Regexp <br>
+            ❱ Exercises
+    </td>
+</tr>
+</table>
+
