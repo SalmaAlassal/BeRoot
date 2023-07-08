@@ -77,15 +77,76 @@ Package managers serve the following functions to fulfill the needs mentioned ab
 
 ## Different kinds of package managers
 
+### "Normal" package managers
+
 - Package Managers differ based on packaging system, but same packaging system may have more than one package manager.
 
-|Package Managers            |  Distribution                                       |
-|----------------------------|-----------------------------------------------------|
-|**RPM** and **YUM**/**DNF** | RHEL, CentOS, Fedora and other derivatives of RHEL  | 
-|**dpkg** and **APT**        | Debian, Ubuntu, Mint and other derivatives of Debian|
-|**Pacman**	                 | Arch Linux and derivatives                          |
-|**Portage**                 | Gentoo                                              |
+|Package Managers            |  Distribution                                         |
+|----------------------------|-----------------------------------------------------  |
+|**RPM** and **YUM**/**DNF** | RHEL, CentOS, Fedora and othe      derivatives of RHEL| 
+|**dpkg** and **APT**        | Debian, Ubuntu, Mint and other derivatives of Debian  |
+|**Pacman**	                 | Arch Linux and derivatives                            |
+|**Portage**                 | Gentoo                                                |
 
+### "Bundling" package managers
+
+**Note: throughout this section `flatpak` is used as an example; however, other similar package managers exist such as `snapcraft`**
+
+- what was discussed above are what can be thought of as "normal" package managers that are dependant on the distro worked on
+
+- lately a different type of distro-agnostic package managers have emerged which serve the same purpose as normal package managers but work differently under the hood
+
+#### basic principle
+
+- the basic prinicple of package managers like flatpak is that they bundle the package binaries and dependencies into one entity that runs in isolation from the rest of the system (the package and its dependencies are sandboxed)
+
+- this differes form traditional package managers as traditional managers will install the binaries and dependencies on your system without isolating and bundling them (you can see and access the binaries and dependencies of an installed package in your file system)
+
+- these managers also have repositories that store the special type of packages needed for them to work (flatpak refers to these special packages as **bundles**). The most commonly used source of flatpak bundles is `flathub.org`
+
+#### pros and cons
+
+|pros                        |  cons                                                 |
+|----------------------------|-----------------------------------------------------  |
+|because the packages are run in isolation from the system, only one package is made and it can run on technically any version of any distro out there | due to the isolatoin, a flatpak of a package is generally slower than the package installed in the traditonal manner                 | 
+|because the packages run in isolation, no root privalages are needed for installation and it is safer to run the software        | the flatpak version of a package has a larger size than its traditional countnerpart (this effect is reduced as you depend more on flatpak due to optimization implemented by the tool)        |
+|if a software dependency breaks, the rest of the system is safe (again due to the isolation these managers provide)                |               |
+|packages requiring different versions of the same dependency can be handled much easier compared to normal managers |                                  |
+
+
+#### common commands
+
+flatpak commands and functionalities are similar to traditional package managers
+
+- Adding a remote (adding a repository):
+    - `$ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
+
+    - here `flathub` is the name given to the remote locally and `https://flathub.org/repo/flathub.flatpakrepo` is the URL for the remote
+
+    - when using flatpak we have to do this because there are multiple repositories to choose from unlike the centralized repository of traditional package managers
+
+- Remove a remote:
+    - `$ flatpak remote-delete flathub`
+
+- Search for a package in the remotes added to a system:
+    - `$ flatpak search gimp`
+
+- Installing a package:
+    - `$ flatpak install flathub org.gimp.GIMP`
+    - here `flathub` is the name given locally to the remote we want to install from
+    - `org.gimp.GIMP` is the ID of the package
+
+
+- Removing a package 
+    - `$ flatpak uninstall org.gimp.GIMP`
+
+- Updating
+    - `$ flatpak update`
+
+- Listing installed packages
+    - `$ flatpak list --app`
+    
+    
 
 ## Architecture of Package managers
 
