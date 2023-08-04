@@ -1,5 +1,11 @@
 # BeRoot
 
+Are you ready to unlock the full potential of the Linux command line? Your journey begins here!
+
+BeRoot is your comprehensive guide to mastering the Linux Shell, designed to take you from a beginner to an advanced user. It's crafted with love for the [Open Source community](https://github.com/Open-Source-Community) at Ain Shams University and the wider FOSS community.
+
+**No matter your skill level, BeRoot has something for you.**
+
 # Table of Contents
 
 ### Session 1
@@ -307,7 +313,7 @@
 </tr>
 </table>
 
-# Session 7
+### Session 7
 
 <table>
 <tr>
@@ -373,7 +379,7 @@
 </tr>
 </table>
 
-# Session 8
+### Session 8
 
 <table>
 <tr>
@@ -392,7 +398,7 @@
 </tr>
 </table>
 
-# Session 9 & 10
+### Session 9 & 10
 
 <table>
 <tr>
@@ -415,7 +421,7 @@
 </table>
 
 
-# Session 11
+### Session 11
 
 <table>
 <tr>
@@ -466,7 +472,7 @@
 </tr>
 </table>
 
-# Session 12
+### Session 12
 
 <table>
 <tr>
@@ -497,3 +503,34 @@
 </tr>
 </table>
 
+
+### Session 13
+
+<table>
+<tr>
+    <td>  <a href="Editors/vim">  VIM  </a> </td>
+    <td>
+        ❱ What is Vim <br>
+        ❱ Why to learn VIM ? <br>
+        ❱ Installation <br>
+        ❱ VIM Modes
+    </td>
+</tr>
+</table>
+
+### Session 14
+
+<table>
+<tr>
+    <td>  <a href="Job Scheduling">  Job Scheduling  </a> </td>
+    <td>
+        ❱ At <br>
+        ❱ Cron <br>
+        ❱ Crontab <br>
+    </td>
+</tr>
+</table>
+
+# Contribution
+
+We encourage everyone to contribute to this guide and help make it even more comprehensive and valuable for learners. If you have any corrections, additions, or suggestions, feel free to submit a pull request.
