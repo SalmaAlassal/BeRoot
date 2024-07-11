@@ -18,13 +18,13 @@ Any other user who has access to a file. This person has neither created the fil
 
 # Linux File Permissions
 
-Every file and directory in your UNIX/Linux system has following **3 permissions** defined for all the 3 owners discussed above.
+Every file and directory on your UNIX/Linux system has the following **3 permissions** defined for all the 3 owners discussed above.
 
 ### Read `r`
 
-This permission give you the authority to open and read a file. 
+This permission gives you the authority to open and read a file. 
 
-Read permission on a directory gives you the ability to lists its content.
+Read permission on a directory gives you the ability to list its content.
 
 ### Write `w`
 
@@ -38,7 +38,7 @@ Consider a scenario where you have to write permission on file but do not have w
 
 In Windows, an executable program usually has an extension “**.exe**” and which you can easily run. In Unix/Linux, you cannot run a program unless the execute permission is set. If the execute permission is not set, you might still be able to see/modify the program code(provided read & write permissions are set), but not run it.
 
-The write permission on a directory means that the contents of the directory can be accessed. (You can change into the
+The execute permission on a directory means that the contents of the directory can be accessed. (You can change into the
 directory, read information about its files, and access its files if the files' permissions allow it.)
 
 By default, any newly created files are not executable regardless of its file extension suffix.
@@ -58,7 +58,7 @@ A file may be removed by anyone who has write permission to the directory in whi
 - `x` = execute permission
 - `–` = no permission
 
-
+Note that the single permissions (r, w, and x) are represented as binary bits (4, 2, 1) and the permissions for a whole owner are represented as an octal number (7, 5, 4)
 ![ls -l](imgs/ls-long.png)
 
 > `ls -l` displays the size of space on the disk that is used to store the **meta information**. The file metadata details include information regarding its size, permissions, creation date, access date, inode number, UID/GID, file type etc. If it is i.e. 1024 this means that 1024 bytes on the disk are used for this purpose.
@@ -84,9 +84,9 @@ Chmod command stands for **change mode**. Using the command, we can set permissi
 
 ### Absolute(Numeric) Mode 
 
-- In this mode, file permissions are not represented as characters but a three-digit octal number.
+- In this mode, file permissions are not represented as characters but as a three-digit octal number.
 
-- The table below gives numbers for all for permissions types.
+- The table below gives numbers for all permissions types, **try to list them yourself first before checking the table :)**
 
 | Number | Permission Type       | Symbol |
 |--------|-----------------------|--------|
