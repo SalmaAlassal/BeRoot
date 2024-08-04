@@ -15,6 +15,16 @@ We use `at` when the future task will be executed one time and will not be repea
     - ***Ex :*** `at noon`
 - You can combine various methods together 
     - ***Ex :*** `at noon +2 weeks`
+- After writing the command a prompt will open where you will enter the command or scripts you want to run, after finishing press `Ctrl + D` to exit the prompt and save the job
+
+> The timer starts after pressing `Enter` on the `at` command not after you finish writing in the prompt
+
+### Options
+
+- `-f`:
+  - Read command from a file
+- `-c`
+  - Prints the job's command, also prints other information related to the environment variables
 
 ### `atq`
 To see all the tasks scheduled by `at`.
@@ -27,7 +37,10 @@ To remove a scheduled task.\
 ![](./imgs/atrm-1.png)
 
 ### `batch`
-Runs commands when system load permits.
+
+- Runs commands when system load permits (When it gets below 0.8).
+
+- Load Average in Linux is a metric that is used by Linux users to keep track of system resources. It also helps you monitor how the system resources are engaged.
 
 
 ## `cron` 

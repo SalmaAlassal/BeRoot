@@ -112,6 +112,122 @@ On my system, `/sbin/init` is a symlink to `/lib/systemd/systemd`:
 
 ![/lib/systemd/systemd](imgs/systemd.png)
 
+---
+
+systemd is an init system, an init system is the most important process, it is the very first process to start on your system, and schedules all other processes on your system.
+
+### Basic Commands
+#### Working with Units
+
+- Units in systemd refers to any resource it's able to manage
+  - includes services, mounts, timers, automounts and more
+
+##### systemctl
+
+`systemctl status <service>`
+
+* Checks status of a service
+  * Sometimes log messages are printed below the `status` output
+
+`systemctl start <service>`
+
+* Starts service
+
+`systemctl stops <service>`
+
+* Stops service
+
+`systemctl restart <service>`
+
+* Restarts service
+  
+---
+
+* Enable/Disable are about the service status when device starts, enabled means it will start automatically at boot
+  * `preset` refers to how the distro has configured systemd to have services be disabled by default
+
+`systemctl enable <service>`
+
+* Enables service
+
+`systemctl disable <service>`
+
+* Disables service
+
+---
+
+#### Where are unit files stored
+
+* Services have extension `.service`
+* Text files that have instructions tells systemd how to manage particular service
+
+#### Directories for service files
+
+1) `/etc/systemd/system`
+   * Most common dir 
+2) `/run/systemd/system`
+   * Runtime systemd units
+3) `/lib/systemd/system`
+   * Installed service files will go into
+
+---
+
+#### Unit directory priority
+
+1) `/etc/systemd/system`
+2) `/run/systemd/system`
+3) `/lib/systemd/system`
+
+* Any service file or config stored in a directory with higher priority will take priority and get loaded first.
+
+---
+
+### Inside the `.service` file
+
+* We have mainly 3 sections in the service file
+
+1) Unit
+2) Service
+3) Install
+
+---
+
+#### Unit
+
+* **Description**
+  * Describes what the unit is for
+* **Wants**
+  * Dependency, prerequisite unit that must be started first
+* **After**
+  * Also a prerequisite, this service must run after the services in this field
+* **Documentation**
+  * Shows where to find the documentation for this service
+
+---
+
+#### Service
+
+* Here we have configuration options
+
+* **Type**
+  * Type of service.
+    * `notify`: Process runs when it tells systemd it's ready
+    * `simple`: Default, causes systemd to consider the service to be started as soon as you start it
+* **ExecStart**
+  * What happens when the process is started up
+* **ExecStop**
+  * What happens when the process is stopped
+* **ExecReload**
+  * What happens when the process is reloaded
+    * `reload` causes process to reload its config files which enables a setting to take effect without user getting disconnected
+
+---
+
+#### Install
+
+* Isn't required but if present it will configure what happens when a unit is enabled or disabled
+
+---
 
 ------------------------------------------------------------------------
 
