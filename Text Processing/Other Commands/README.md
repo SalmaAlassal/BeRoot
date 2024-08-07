@@ -98,4 +98,24 @@ It is used to join files horizontally (parallel merging) by outputting lines con
 ![Examples](imgs/paste.png)
 
 --------------------------------------------------------
+
+## Comparing Text
+- It is often useful to compare versions of text files. For system administrators and software developers, this is particularly important.
+A programmer frequently needs to see what changes have been made to programs over time.
+#### commands : `diff` and file should be sorted
+
+# `diff` 
+- diff is often used by software developers to examine changes between different versions of program source code
+command : `diff file1 file2`
+
+
+- **Options**
+1. `-c`
+
+![-c](imgs/c.png)
+
+1. `-u`
+
+![](imgs/u.png)
+
 --------------------------------------------------------

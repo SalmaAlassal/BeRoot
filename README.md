@@ -483,6 +483,7 @@ BeRoot is your comprehensive guide to mastering the Linux Shell, designed to tak
             ❱ Uniq  <br>
             ❱ tr    <br>
             ❱ paste <br>
+            ❱ diff <br>
             ❱ Regex <br>
             ❱ Grep  <br>
             ❱ Sed   <br>
