@@ -69,7 +69,18 @@ Making money with open source software may be difficult, but it is not entirely 
 
 ## Comparison
 
-![Comparison](imgs/comparison.png)
+From: ["What's Foss?"](https://satharus.me/tech/2019/04/16/whats_foss.html)
+
+|               | Freeware | Proprietary | Source-Available | FOSS |
+|:-------------:|:--------:|:-----------:|:----------------:|:----:|
+| Unlimited Use |     ⚠️    |      ❌      |         ⚠️        |   ✅  |
+|     Study     |     ❌    |      ❌      |         ✅        |   ✅  |
+|     Share     |     ⚠️    |      ❌      |         ❌        |   ✅  |
+|    Improve    |     ❌    |      ❌      |         ⚠️        |   ✅  |
+
+⚠️ Freeware restrictions depend on what the developer wants to set.
+
+⚠️ You're allowed to improve Source-Available software but not allowed to redistribute. Also, its unlimited use is for the developer to decide.
 
 ------------------------------------------------------------------
 
