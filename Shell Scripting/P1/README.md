@@ -4,6 +4,10 @@
 
 It's a program that takes commands from the keyboard and gives them to the operating system to perform. (interprets and executes CL)
 
+The name "Shell" comes from the analogy that operating systems are like nuts, the inside of the operating system is called the "kernel", exactly like the inside of a nut is called, and the part in the operating system that is on the outside and communicates with the kernel (the inside) is called the Shell.
+
+![coconut-shell-kernel](../imgs/coconut-shell-kernel.png)
+
 Different Types of Shells in Linux : sh, zsh, csh, ksh and bash
 ### Bash
 
@@ -42,7 +46,11 @@ Let's break everything down :
 
 `#!/path/to/interpreter`
 
-The hash exclamation mark (`#!`) is referred to as the **Shebang**. Following it is the path to the program that should be used to run the rest of the lines in the text file. For example, `#!/bin/bash` ensures that Bash will be used to interpret the script, even if it is executed under another shell.
+The hash exclamation mark (`#!`) is referred to as the **Shebang**. 
+
+The name probably originated from a combination between the 2 words "Ha**sh**" + "**Bang**" (which means exclamation mark informally)
+
+Following it is the path to the program that should be used to run the rest of the lines in the text file. For example, `#!/bin/bash` ensures that Bash will be used to interpret the script, even if it is executed under another shell.
 
 You can check the path to Bash by viewing the content of `/etc/shells` on your machine.
 
